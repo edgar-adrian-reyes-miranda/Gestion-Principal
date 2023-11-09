@@ -12,6 +12,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { MatIconModule, MatIcon } from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { HttpClientModule } from '@angular/common/http';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
@@ -31,7 +34,9 @@ import { MatInputModule } from '@angular/material/input';
     NavbarComponent,
     MatIconModule,
     MatInputModule,
-   
+    HttpClientModule,
+    MatSnackBarModule,
+    MatCardModule,
     
   ],
   exports: [RouterModule]
