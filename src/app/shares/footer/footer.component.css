@@ -1,9 +1,10 @@
 div h1{
     text-align: center;
-    size: 23px ;
+    text-justify: distribute;
     color: #56242A;
     background-color: #B38E5D;
     border-radius: 80px;
     font-style:initial;
+    font-family: 'Montserrat-ExtraBold';
 }
 

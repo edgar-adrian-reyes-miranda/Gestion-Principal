@@ -1,3 +1,4 @@
+import { routes } from './app.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -8,15 +9,14 @@ import { RouterModule } from '@angular/router';
 import { FooterComponent } from './shares/footer/footer.component';
 import { HeaderComponent } from './shares/header/header.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { MatIcon, MatIconModule } from '@angular/material/icon';
-import { routes } from './app.module';
-
+import { MatIconModule, MatIcon } from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    
+    AppComponent,   
   ],
   providers: [],
   bootstrap: [AppComponent],
@@ -30,6 +30,9 @@ import { routes } from './app.module';
     HeaderComponent,
     NavbarComponent,
     MatIconModule,
+    MatInputModule,
+   
+    
   ],
   exports: [RouterModule]
 })

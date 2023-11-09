@@ -12,6 +12,23 @@
     url('assets/fonts/static/Montserrat-Black.ttf'),
     url('assets/fonts/static/Montserrat-BlackItalic.ttf'),
     url('assets/fonts/static/Montserrat-Bold.ttf'),
-    url('assets/fonts/static/Montserrat-BoldItalic.ttf')
-    ;
+    url('assets/fonts/static/Montserrat-BoldItalic.ttf'),
+    url('assets/fonts/static/Montserrat-ExtraBold.ttf')
+    url('assets/fonts/static/Montserrat-ExtraBoldItalic.ttf'),
+    url('assets/fonts/static/Montserrat-ExtraLight.ttf'),
+    url('assets/fonts/static/Montserrat-ExtraLightItalic.ttf'),
+    url('assets/fonts/static/Montserrat-Light.ttf'),
+    url('assets/fonts/static/Montserrat-Italic.ttf'),
+    url('assets/fonts/static/Montserrat-LightItalic.ttf'),
+    url('assets/fonts/static/Montserrat-Medium.ttf'),
+    url('assets/fonts/static/Montserrat-MediumItalic.ttf'),
+    url('assets/fonts/static/Montserrat-Regular.ttf'),
+    url('assets/fonts/static/Montserrat-SemiBold.ttf'),
+    url('assets/fonts/static/Montserrat-SemiBoldItalic.ttf'),
+    url('assets/fonts/static/Montserrat-Thin.ttf'),
+    url('assets/fonts/static/Montserrat-ThinItalic.ttf');
+}
+.full-width{
+    width: 100%;
+
 }
