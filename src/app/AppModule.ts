@@ -10,11 +10,13 @@ import { FooterComponent } from './shares/footer/footer.component';
 import { HeaderComponent } from './shares/header/header.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MatIconModule, MatIcon } from '@angular/material/icon';
-import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatCardModule} from '@angular/material/card';
+import {MatToolbarModule} from '@angular/material/toolbar';
+
+
 
 
 @NgModule({
@@ -37,6 +39,7 @@ import {MatCardModule} from '@angular/material/card';
     HttpClientModule,
     MatSnackBarModule,
     MatCardModule,
+    MatToolbarModule,
     
   ],
   exports: [RouterModule]

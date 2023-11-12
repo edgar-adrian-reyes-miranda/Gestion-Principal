@@ -1,2 +1,13 @@
-<app-singup></app-singup>
-<app-login></app-login>
+<mat-toolbar>
+    <a [routerLink]="'/'" mat-icon-button class="example-icon" Montserrat-label="Example icon-button with menu icon ">
+        <mat-icon>menu_open</mat-icon>
+    </a>
+    <span> Gestion de Recursos y Generador de Reportes</span>
+    <span class="example-spacer"></span>
+    <a [routerLink]="'/singup'" mat-icon-button class="example-icon favorite-icon" 
+    Montserrat-label="Example icon-button with heart icon">Registrar</a>
+
+    <a [routerLink]="'/login'" mat-icon-button class="example-icon favorite-icon mr20 ml70" 
+    Montserrat-label="Example icon-button with heart icon">Iniciar Sesión</a>
+
+</mat-toolbar>

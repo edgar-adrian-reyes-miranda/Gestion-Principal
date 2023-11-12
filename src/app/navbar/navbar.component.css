@@ -1,0 +1,15 @@
+.example-spacer{
+    flex: 1 1 auto;
+}
+
+mat-toolbar{
+    color: #D4C19C;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}

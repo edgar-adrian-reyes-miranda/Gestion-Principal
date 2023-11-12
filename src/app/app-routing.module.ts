@@ -5,10 +5,17 @@ import { HomeComponent } from './pages/home/home.component';
 import { SingupComponent } from './pages/singup/singup.component';
 
 
+
 const routes: Routes = [
-  {path: '', component:HomeComponent, pathMatch:'full'},
-  {path:'singup', component:SingupComponent, pathMatch:'full'},
-  {path:'login', component:LoginComponent, pathMatch:'full'},
+  {path: '', 
+  component:HomeComponent,
+   pathMatch:'full'},
+  {path:'singup',
+   component:SingupComponent, 
+   pathMatch:'full'},
+  {path:'login', 
+  component:LoginComponent, 
+  pathMatch:'full'},
   
 ];
 
