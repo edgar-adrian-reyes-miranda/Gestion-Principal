@@ -8,17 +8,17 @@
                     </div>
                     <h1 class="text-center">Inicio de Sesión</h1>
                     <!--formulario-->
-                    <form action="" method="post">
+                    <form (ngSubmit) ="formSubmit">
                         <mat-form-field class="full-width"  appearance = "outline">
                         <mat-label>Nombre de usuario</mat-label>
-                        <input require  name="username" matInput
+                        <input [(ngModel)]="loginData.username"require  name="username" matInput
                             placeholder="Digite su nombre de usuario">
                         <mat-hint>El nombre de usuario debe ser valido</mat-hint>
                         </mat-form-field>
                          <!--clave-->       
                          <mat-form-field class="full-width"  appearance = "outline">
                             <mat-label>password</mat-label>
-                            <input require type="password" name="password"
+                            <input [(ngModel)]="loginData.password"  require type="password" name="password"
                              matInput  placeholder="Digite su contraseña">
                             <mat-hint>La contraseña debe ser valido</mat-hint>
                             </mat-form-field>

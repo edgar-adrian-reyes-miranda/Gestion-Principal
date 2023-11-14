@@ -1,3 +1,4 @@
+import { SingupService } from './../../services/singup.service';
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -6,6 +7,8 @@ import { MatInputModule } from '@angular/material/input';
 import { LoginService } from 'src/app/services/login.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import Swal from 'sweetalert2';
+
+
 
 @Component({
   selector: 'app-singup',
@@ -28,7 +31,8 @@ export class SingupComponent  implements OnInit{
     email:''
   }
 
-  constructor(private LoginService:LoginService, private snack:MatSnackBar ){}
+
+  constructor(private SingupService:SingupService, private snack:MatSnackBar ){}
 
   ngOnInit():void{
 
@@ -36,25 +40,26 @@ export class SingupComponent  implements OnInit{
 
   formSubmit(){
     console.log(this.user);
-    if(this.user.username=='' || this.user.username==null){
-      this.snack.open('el nombre de usuario es requerido', 'Aceptar',{
-        duration :3000,
-        verticalPosition:'top',
-        horizontalPosition:'right'
+    if(this.user.username == '' || this.user.username == null){
+      this.snack.open('El nombre de usuario es requerido !!','Aceptar',{
+        duration : 3000,
+        verticalPosition : 'top',
+        horizontalPosition : 'right'
       });
       return;
     }
-    this.LoginService.añadirUsuario(this.user).subscribe(
-      (data)=>{
+
+    this.SingupService.añadirUsuario(this.user).subscribe(
+      (data: any) => {
         console.log(data);
-        Swal.fire('Usuario Guardado', 'Usuario registrado con exito en el sistema','success');
-      },(error )=>{
+        Swal.fire('Usuario guardado','Usuario registrado con exito en el sistema','success');
+      },(error: any) => {
         console.log(error);
-        this.snack.open('el nombre de usuario es requerido', 'Aceptar',{
-          duration :3000
+        this.snack.open('Ha ocurrido un error en el sistema !!','Aceptar',{
+          duration : 3000
         });
       }
     )
-  }
 
+}
 }

@@ -6,11 +6,17 @@ import baseUrl from './helper';
   providedIn: 'root'
 })
 export class LoginService {
+  añadirUsuario(user: { username: string; nombre: string; password: string; primer_apellido: string; segundo_apellido: string; email: string; }) {
+    throw new Error('Method not implemented.');
+  }
 
-  constructor(private httpClient: HttpClient) { }
-    public añadirUsuario(user:any){
-      return this.httpClient.post(`${baseUrl}/usuarios/`, user)
-    }
+  constructor(private http:HttpClient){
+
+  }
+
+  public generatetoken(loginData:any){
+    return this.http.post('${baseUrl}/generate-token', loginData);
+  }
 
 
 }
