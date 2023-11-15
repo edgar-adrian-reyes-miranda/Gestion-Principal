@@ -5,6 +5,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { SingupComponent } from './pages/singup/singup.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { DashboardUserComponent } from './pages/user/dashboard-user/dashboard-user.component';
+import { AdminGuard } from './services/adminguard.service';
 
 
 
@@ -21,10 +22,14 @@ const routes: Routes = [
   pathMatch:'full'},
   {path:'admin',
   component:DashboardComponent,
-  pathMatch:'full'},
+  pathMatch:'full',
+  canActivate:[AdminGuard]
+  },
   {path:'user-dasboard',
   component:DashboardUserComponent,
-  pathMatch:'full'},
+  pathMatch:'full',
+  canActivate:[]
+}
 
 
   

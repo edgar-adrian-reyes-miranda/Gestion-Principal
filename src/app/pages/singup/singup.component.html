@@ -36,12 +36,13 @@
   
             <mat-form-field class="full-width"  appearance = "outline">
               <mat-label>Email</mat-label>
-              <input required required [(ngModel)]="user.email" name = "email" type="email" matInput placeholder="Digite su email">
+              <input  required [(ngModel)]="user.email" name = "email" type="email" matInput placeholder="Digite su email">
             </mat-form-field>
               
             <div class = "container text-center">
               <button mat-raised-button color="primary">Registrar</button>
-              <button type="reset" type="reset" style = "margin-left: 20px;" mat-raised-button color="accent">Limpiar</button>
+              <button type="reset" style="margin-left: 20px;" mat-raised-button color="accent">Limpiar</button>
+
             </div>
           </form>
           <br>

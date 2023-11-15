@@ -25,7 +25,7 @@
               "src/assets"
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/purple-green.css",
+              "@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.css",
               "./node_modules/bootstrap/dist/css/bootstrap-grid.min.css"
             ],
@@ -86,11 +86,10 @@
             "tsConfig": "tsconfig.spec.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              "node_modules/sweetalert2/dist/sweetalert.all.min.js"
+              "src/assets"
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/purple-green.css",
+              "@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.css"
             ],
             "scripts": []

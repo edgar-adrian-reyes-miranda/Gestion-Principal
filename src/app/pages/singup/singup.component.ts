@@ -3,11 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
-import { LoginService } from 'src/app/services/login.service';
+import { MatInputModule } from '@angular/material/input'; 
 import { MatSnackBar } from '@angular/material/snack-bar';
-import Swal from 'sweetalert2';
-
 
 
 @Component({
@@ -52,7 +49,9 @@ export class SingupComponent  implements OnInit{
     this.SingupService.añadirUsuario(this.user).subscribe(
       (data: any) => {
         console.log(data);
-        Swal.fire('Usuario guardado','Usuario registrado con exito en el sistema','success');
+        this.snack.open('Usuario guardado','Usuario registrado con exito en el sistema',{
+          duration : 3000
+        });
       },(error: any) => {
         console.log(error);
         this.snack.open('Ha ocurrido un error en el sistema !!','Aceptar',{
