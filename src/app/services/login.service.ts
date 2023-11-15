@@ -1,35 +1,65 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import baseUrl from './helper';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
-  loginStatusSubjec: any;
-  getUserRole() {
-    throw new Error('Method not implemented.');
-  }
-  getCurrentUser() {
-    throw new Error('Method not implemented.');
-  }
-  setUser(user: any) {
-    throw new Error('Method not implemented.');
-  }
-  loginUser(token: any) {
-    throw new Error('Method not implemented.');
-  }
-  añadirUsuario(user: { username: string; nombre: string; password: string; primer_apellido: string; segundo_apellido: string; email: string; }) {
-    throw new Error('Method not implemented.');
-  }
 
-  constructor(private http:HttpClient){
+  public loginStatusSubjec= new Subject<boolean>();
 
-  }
+  constructor (private http:HttpClient){}
 
+  ///generramos el token
   public generatetoken(loginData:any){
-    return this.http.post('${baseUrl}/generate-token', loginData);
+    return this.http.post(`${baseUrl}/generate-token`,loginData);
+    }
+    public getCurrentUser(){
+      return this.http.get(`${baseUrl}/actual-usuario`);
+    }
+  //iniciamos sesion y establecemos el token en el localstorage
+  public loginUser(token:any){
+    localStorage.setItem('token',token);
+  }
+
+  public isLoggedIn(){
+    let tokenStr=localStorage.getItem('token');
+    if(tokenStr == undefined || tokenStr==''|| tokenStr==null){
+      return false
+    }else{
+      return true;
+    }
+  }
+
+  //cerramos sesion y eliminamos el token del  localstorage
+  public logout(){
+ localStorage.removeItem('token');
+ localStorage.removeItem('user');
+    return true;
+  }
+  //obtenemos el token
+  public getToken(){
+    return localStorage.getItem('token');
+  }
+
+  public setUser(user:any){
+    localStorage.setItem('user',JSON.stringify(user));
   }
 
 
-}
+  public getUser(){
+    let userStr = localStorage.getItem('user');
+    if(userStr != null){
+      return JSON.parse(userStr);
+    }else{
+      this.logout();
+      return null;
+    }
+  }
+    public getUserRoler(){
+      let user= this.getUser();
+      return user.authorities[0].authority;
+    }
+  }
