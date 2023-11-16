@@ -58,8 +58,17 @@ export class LoginService {
       return null;
     }
   }
-    public getUserRoler(){
-      let user= this.getUser();
+  public getUserRoler(){
+    let user = this.getUser();
+    console.log('Usuario:', user);
+  
+    if (user && user.authorities && user.authorities.length > 0) {
+      console.log('Rol:', user.authorities[0].authority);
       return user.authorities[0].authority;
+    } else {
+      console.error('El usuario o sus autoridades son undefined.');
+      return null; // o un valor por defecto según tu lógica
     }
+  }
+  
   }

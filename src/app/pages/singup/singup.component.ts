@@ -12,7 +12,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   standalone: true,
   imports: [CommonModule, MatFormFieldModule, FormsModule, MatInputModule],
   templateUrl: './singup.component.html',
-  styleUrl: './singup.component.css',
+  styleUrls: ['./singup.component.css'],
  
 })
 
