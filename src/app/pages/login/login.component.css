@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-family: 'Montserrat';
   }
   html,
   body {
@@ -17,7 +18,7 @@
     padding: 2rem 3rem;
     margin: auto;
     border-radius: 2.5rem;
-    background-color: #ecf0f3;
+    background-color: #D4C19C;
     box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
     color: black;
     margin-top: 10rem;
@@ -41,7 +42,7 @@
     font-size: 0.875rem;
     color: #ffffff;
     font-weight: bold;
-    background-color: #bcd8c1;
+    background-color: #B38E5D;
     width: 100%;
     display: block;
     padding: 0.875rem 1rem;

@@ -1,5 +1,4 @@
-import { DashboardComponent } from './../admin/dashboard/dashboard.component';
-
+import { AdminWelcomComponent } from './../admin/welcom/admin-welcom/admin-welcom.component';
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
@@ -19,28 +18,23 @@ import { Router } from '@angular/router';
   styleUrl: './login.component.css'
 })
 export class LoginComponent implements OnInit {
-  username!:string;
-  password!:string;
+  username: string = '';
+password: string = '';
+errorMessage: string = '';
 
-  ngOnInit(): void {}
+constructor(private userService: UsersService, private router: Router) { }
 
-  constructor(public userService: UsersService, public router: Router) {}
+ngOnInit(): void { }
 
   login() {
-    const user = {username: this.username, password: this.password};
+    const user = { username: this.username, password: this.password };
     this.userService.login(user).subscribe(
-      (data: any) => {
-        // Si la respuesta es exitosa, verificar si hay un mensaje de error
-        if (data && data.error) {
-          console.log('Error en la respuesta del servidor:', data.error);
-        } else {
-          this.userService.setToken(data.token);
-          this.router.navigateByUrl('/DashboardComponent');
-        }
+      data => {
+        this.userService.setToken(data.token);
+        this.router.navigateByUrl('/AdminWelcomComponent');
       },
-      (error) => {
-        console.log('Error en la solicitud POST:', error);
-      }
-    );
-  } 
+      error => {
+        console.log(error);
+      });
+  }
 }
