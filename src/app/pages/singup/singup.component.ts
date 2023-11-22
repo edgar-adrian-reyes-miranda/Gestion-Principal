@@ -1,10 +1,9 @@
-import { SingupService } from './../../services/singup.service';
-import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input'; 
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { UsersService } from 'src/app/services/users.service';
+import { Component, OnInit } from '@angular/core';
 
 
 @Component({
@@ -16,49 +15,27 @@ import { MatSnackBar } from '@angular/material/snack-bar';
  
 })
 
-export class SingupComponent  implements OnInit{
+export class SingupComponent  implements OnInit {
+
+ ngOnInit(): void {
+ }
+
+ correo!:string;
+ nombre!:string;
+ p_apellido!:string;
+ password!:string;
+ s_apellido!:string;
+ username!:string;
 
 
-  public user ={
-    username:'',
-    nombre:'',
-    password:'',
-    primer_apellido:'',
-    segundo_apellido: '',
-    email:''
-  }
+ constructor(public userService: UsersService) {}
 
-
-  constructor(private SingupService:SingupService, private snack:MatSnackBar ){}
-
-  ngOnInit():void{
-
-  }
-
-  formSubmit(){
-    console.log(this.user);
-    if(this.user.username == '' || this.user.username == null){
-      this.snack.open('El nombre de usuario es requerido !!','Aceptar',{
-        duration : 3000,
-        verticalPosition : 'top',
-        horizontalPosition : 'right'
-      });
-      return;
-    }
-
-    this.SingupService.añadirUsuario(this.user).subscribe(
-      (data: any) => {
-        console.log(data);
-        this.snack.open('Usuario guardado','Usuario registrado con exito en el sistema',{
-          duration : 3000
-        });
-      },(error: any) => {
-        console.log(error);
-        this.snack.open('Ha ocurrido un error en el sistema !!','Aceptar',{
-          duration : 3000
-        });
-      }
-    )
-
+ register() {
+  const user = {correo :this.correo,nombre :this.nombre,p_apellido :this.p_apellido, password :this.password,s_apellido :this.s_apellido,username :this.username};
+  this.userService.register(user).subscribe(data => {
+    this.userService.setToken(data.token);
+  });
 }
+
+
 }

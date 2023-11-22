@@ -1,12 +1,16 @@
-import { LoginService } from 'src/app/services/login.service';
+import { DashboardComponent } from './../admin/dashboard/dashboard.component';
+
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { UsersService } from 'src/app/services/users.service';
 import { Router } from '@angular/router';
+
+
+
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -14,54 +18,29 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent  implements OnInit{
-  loginData={
-    "username":"",
-    "password":""
-  }
+export class LoginComponent implements OnInit {
+  username!:string;
+  password!:string;
 
-  constructor(private snack:MatSnackBar, private loginService:LoginService, private router:Router){}
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
+  constructor(public userService: UsersService, public router: Router) {}
 
-  formSubmit(){
-    if(this.loginData.username.trim()== '' || this.loginData.username.trim()== null){
-      this.snack.open('El nombre de usuario es requerido!!', 'Aceptar',{
-        duration:3000
-      })
-      return;
-    }
-      this.loginService.generatetoken(this.loginData).subscribe(
-        (data:any)=>{
-          console.log(data);
-          this.loginService.loginUser(data.token);
-          this.loginService.getCurrentUser().subscribe((user:any) => {
-            this.loginService.setUser(user);
-            console.log(user);
-
-            if(this.loginService.getUserRoler() == 'ADMIN'){
-              //dashborad admin
-              //windows.location.hrf='/admin';
-              this.router.navigate(['admin']);
-              this.loginService.loginStatusSubjec.next(true);
-              }
-              else if(this.loginService.getUserRoler()=='NORMAL'){
-                //user dashboard
-                //windows.location.hrf='/user-dashboard';
-                this.router.navigate(['dashboard-user']);
-                this.loginService.loginStatusSubjec.next(true);
-              }
-              else{
-                  this.loginService.logout();
-              }
-            })
-          },(error) => {
-            console.log(error);
-            this.snack.open('Detalles invalidos, vuelvea intentar!! ', 'Aceptar',{
-              duration:3000
-            })
+  login() {
+    const user = {username: this.username, password: this.password};
+    this.userService.login(user).subscribe(
+      (data: any) => {
+        // Si la respuesta es exitosa, verificar si hay un mensaje de error
+        if (data && data.error) {
+          console.log('Error en la respuesta del servidor:', data.error);
+        } else {
+          this.userService.setToken(data.token);
+          this.router.navigateByUrl('/DashboardComponent');
         }
-     )
-    }
+      },
+      (error) => {
+        console.log('Error en la solicitud POST:', error);
+      }
+    );
+  } 
 }

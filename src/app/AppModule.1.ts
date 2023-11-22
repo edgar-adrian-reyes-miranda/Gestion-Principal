@@ -15,7 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import {authInterceptorProviders} from './services/auth.interceptor';
+import { CookieService } from 'ngx-cookie-service';
+
 
 
 
@@ -41,7 +42,7 @@ import {authInterceptorProviders} from './services/auth.interceptor';
     
   ],
   exports: [RouterModule],
-  providers: [authInterceptorProviders],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
