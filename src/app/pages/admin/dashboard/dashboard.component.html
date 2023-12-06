@@ -1,14 +1,31 @@
-<div class = "bootstrap-wrapper">
-    <div class = "container-fluid">
-      <div class = "row">
-        <div class = "col-md-3">
-        
-        <!--- <app-sidebar></app-sidebar>-->
+<mat-card class="mt20">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+              <mat-card-header>
+                  <mat-card-title>
+                      Bienvenido usuario
+                  </mat-card-title>
+              </mat-card-header>
+              <mat-card-subtitle>Panel de usuario</mat-card-subtitle>
+              <mat-card-content class="ml30">
+                  <h1></h1>
+                  <p></p>
+                  <mat-divider></mat-divider>
+                  <br>
+                  <h1>Sus funciones : </h1>
+                  <ul>
+                      <li><a [routerLink]="'/dashboard'"><mat-icon>home</mat-icon>Pagina principal</a></li>
+                      <li><a [routerLink]="'/datos-personales-registro'"><mat-icon>person</mat-icon>Registro de Datos personales</a></li>
+                      <li><a [routerLink]="'/datos-escolares-registro'"><mat-icon>school</mat-icon>Registro de Datos Escolares</a></li>
+                      <li><a [routerLink]="'/datos-ingreso-registro'"><mat-icon>assignment</mat-icon>Registro de Datos Ingresos</a></li>
+                      <li><a [routerLink]="'/generador-reportes'"><mat-icon>insert_chart</mat-icon> Generador de Reportes</a></li>
+                      <li><a [routerLink]="'/usuario'"><mat-icon>supervisor_account</mat-icon>Perfil de usuario</a></li>
+                  </ul>
+                  <mat-divider></mat-divider>
+                  <br>
+              </mat-card-content>
+          </div>
       </div>
-
-      <div class = "col-md-9">
-        
-        </div>
-      </div>
-    </div>
   </div>
+</mat-card>

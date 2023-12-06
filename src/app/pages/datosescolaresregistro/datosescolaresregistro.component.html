@@ -1,0 +1,74 @@
+<a [routerLink]="'/dashboard'" class="menu-link">
+    <mat-icon>home</mat-icon>
+    Página Principal
+</a>
+
+<a [routerLink]="'/datos-escolares-registro'" class="menu-link">
+  <mat-icon>school</mat-icon>
+  Registro escolares
+</a>
+<div class="register">
+  <form  class="custom-form">
+    <h1>Register</h1>
+    <input
+    type="email"
+    
+    name="correo"
+    placeholder="correo electronico"
+    required="required"
+  />
+    <input
+      type="text"
+      
+      name="nombre"
+      placeholder="nombre(S)"
+      required="required"
+    />
+    <input
+      type="text"
+      
+      name="p_apellido"
+      placeholder="Primer Apellido"
+      required="required"
+    />
+    <input
+      type="text"
+     
+      name="s_apellido"
+      placeholder="segundo apellido "
+      required="required"
+    />
+    <input
+      type="text"
+      
+      name="Telefonocasa"
+      placeholder="Telefono"
+      required="required"
+    />
+    <input
+      type="text"
+     
+      name="curp"
+      placeholder="CURP"
+      required="required"
+    />
+   <!-- componente-datos-escolares.component.html -->
+
+
+        <br>
+        <br>
+    <button type="submit">Register</button>
+  </form>
+</div>
+<!--
+ [(ngModel)]="curp"
+ [(ngModel)]="telefonocasa"
+  [(ngModel)]="s_apellido"
+  [(ngModel)]="p_apellido"
+  [(ngModel)]="nombre"
+  [(ngModel)]="correo"
+  (ngregistropersonal)="registropersonal()"
+  [(ngModel)]="datosPersonales.genero"
+  [value]=o"gener">{{ genero }}
+  *ngFor="let genero of generos"
+-->

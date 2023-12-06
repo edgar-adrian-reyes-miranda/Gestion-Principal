@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-dashboard-user',
@@ -8,6 +9,10 @@ import { CommonModule } from '@angular/common';
   templateUrl: './dashboard-user.component.html',
   styleUrl: './dashboard-user.component.css'
 })
-export class DashboardUserComponent {
+export class DashboardUserComponent implements OnInit {
+  constructor(){}
+  ngOnInit(): void {
+    
+  }
 
 }

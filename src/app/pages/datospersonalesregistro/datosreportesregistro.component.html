@@ -1,0 +1,53 @@
+<a [routerLink]="'/datos-personales'" class="menu-link">
+    <mat-icon>list</mat-icon>
+    Lista de personales
+</a>
+<div class="register">
+    <form (ngregistropersonal)="registropersonal()" class="custom-form">
+      <h1>Register</h1>
+      <input
+      type="email"
+      [(ngModel)]="correo"
+      name="correo"
+      placeholder="correo electronico"
+      required="required"
+    />
+      <input
+        type="text"
+        [(ngModel)]="nombre"
+        name="nombre"
+        placeholder="nombre(S)"
+        required="required"
+      />
+      <input
+        type="text"
+        [(ngModel)]="p_apellido"
+        name="p_apellido"
+        placeholder="Primer Apellido"
+        required="required"
+      />
+      <input
+        type="text"
+        [(ngModel)]="s_apellido"
+        name="s_apellido"
+        placeholder="segundo apellido "
+        required="required"
+      />
+      <input
+        type="text"
+        [(ngModel)]="telefonocasa"
+        name="Telefonocasa"
+        placeholder="Telefono"
+        required="required"
+      />
+      <input
+        type="text"
+        [(ngModel)]="curp"
+        name="curp"
+        placeholder="CURP"
+        required="required"
+      />
+          
+      <button type="submit" (click)="registropersonal()">Register</button>
+    </form>
+  </div>

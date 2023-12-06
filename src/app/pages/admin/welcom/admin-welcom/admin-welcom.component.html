@@ -1,31 +1,34 @@
 <mat-card class="mt20">
-    <div class="container">
-     <div class="row">
-       <div class="col-md-12">
-         <mat-card-header>
-           <mat-card-title>
-             Bienvenido administrador {{usuario.username+" "}}
-           </mat-card-title>
-         </mat-card-header>
-         <mat-card-subtitle>Panel de administrador</mat-card-subtitle>
-         <mat-card-content class="ml30">
-           <h1></h1>
-           <p></p>
-           <mat-divider></mat-divider>
-           <br>
-           <h1>Sus funciones : </h1>
-           <ul>
-             <li>Datos Personales de Aspirantes</li>
-             <li>Datos Escolares de los Aspirantes</li>
-             <li>Datos de Ingreso de los Aspirantes</li>
-             <li>Datos FTD </li>
-             <li>Generador de Reportes</li>
-             <li>Administradores</li>
-           </ul>
-           <mat-divider></mat-divider>
-           <br>
-         </mat-card-content>
-       </div>
-     </div>
-    </div>
- </mat-card>
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+              <mat-card-header>
+                  <mat-card-title>
+                      Bienvenido administrador
+                  </mat-card-title>
+              </mat-card-header>
+              <mat-card-subtitle>Panel de administrador</mat-card-subtitle>
+              <mat-card-content class="ml30">
+                  <h1></h1>
+                  <p></p>
+                  <mat-divider></mat-divider>
+                  <br>
+                  <h1>Sus funciones : </h1>
+                  <ul>
+                      <li><a [routerLink]="'/AdminWelcomComponent'"><mat-icon>home</mat-icon>Pagina principal</a></li>
+                      <li><a [routerLink]="'/datos-personales'"><mat-icon>person</mat-icon> Datos Personales de Aspirantes</a></li>
+                      <li><a [routerLink]="'/datos-escolares'"><mat-icon>school</mat-icon> Datos Escolares de los Aspirantes</a></li>
+                      <li><a [routerLink]="'/datos-ingreso'"><mat-icon>assignment</mat-icon> Datos de Ingreso de los Aspirantes</a></li>
+                      <li><a [routerLink]="'/datos-ftd'"><mat-icon>storage</mat-icon> Datos FTD</a></li>
+                      <li><a [routerLink]="'/generador-reportes'"><mat-icon>insert_chart</mat-icon> Generador de Reportes</a></li>
+                      <li><a routerLink="/cursos"><mat-icon>workspace_premium</mat-icon>Cursos</a></li>
+                      <li><a [routerLink]="'/administradores'"><mat-icon>supervisor_account</mat-icon> Administradores</a></li>
+                  </ul>
+                  <mat-divider></mat-divider>
+                  <br>
+              </mat-card-content>
+          </div>
+      </div>
+  </div>
+</mat-card>
+<app-dashboard></app-dashboard>
