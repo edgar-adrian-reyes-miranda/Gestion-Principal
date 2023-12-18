@@ -1,0 +1,31 @@
+/* Estilos de la sección de información */
+div {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #B38E5D; /* Fondo de la sección */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra */
+  }
+  
+  h1 {
+    color: #D4C19C; /* Color del título */
+    font-family: 'Montserrat-Bold';
+    text-align: center;
+  }
+  
+  p {
+    margin-top: 15px;
+    font-family: 'Montserrat-Italic';
+    text-align: justify-all;
+  }
+  
+  img {
+    max-width: 180%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(78, 35, 46, 0.5); /* Sombra para la imagen */
+  }
+  
