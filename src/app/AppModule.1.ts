@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { MenuComponent } from "./Pages/menu/menu.component";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -19,7 +20,8 @@ import { MenuComponent } from "./Pages/menu/menu.component";
     imports: [
         BrowserModule,
         AppRoutingModule,
-        MenuComponent
+        MenuComponent,
+        BrowserAnimationsModule
     ]
 })
 export class AppModule {

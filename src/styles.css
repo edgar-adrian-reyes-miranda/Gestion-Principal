@@ -3,7 +3,8 @@ body {
     background-color: #ffffff;
     font-family: 'Montserrat-BlackItalic';
     margin: 0;
-    
+  background-color: #ffffff;
+
 }
 
 .text-center {
@@ -37,36 +38,3 @@ body {
 .full-width {
     width: 100%;
 }
-
-html,
-body {
-    height: 100%;
-}
-
-body {
-    margin: 0;
-    font-family: 'Montserrat';
-}
-
-.ml20 {
-    margin-left: 20px !important;
-}
-
-.mr20 {
-    margin-left: 20px !important;
-}
-
-.mt20 {
-    margin-left: 20px !important;
-}
-.mb20{
-    margin-left: 20px !important;
-}
-.ml70{
-    margin-left: 70px !important;
-}
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

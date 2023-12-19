@@ -1,0 +1,70 @@
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #4E232E;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.8em;
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #13322B;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+input {
+  padding: 8px;
+  width: 200px;
+}
+
+main table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #56242A;
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #9D1449;
+  color: #fff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #621132;
+  color: #fff;
+}
+
+button.modify, button.delete {
+  background-color: #285C4D;
+  color: #fff;
+  padding: 8px 12px;
+  margin-right: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+button.modify:hover, button.delete:hover {
+  background-color: #13322B;
+}

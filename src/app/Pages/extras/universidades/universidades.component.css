@@ -1,0 +1,68 @@
+/* Utiliza el mismo estilo de la tabla anterior, ya que la apariencia será similar */
+.contenedor {
+  width: 90%;
+  margin: 20px auto;
+}
+
+header {
+  background-color: #621132;
+  color: #ffffff;
+  padding: 10px;
+  text-align: center;
+}
+
+div.acciones {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #D4C19C;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+button#nuevaUniversidad {
+  background-color: #285C4D;
+  color: #ffffff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input#busqueda {
+  width: 30%;
+  padding: 10px;
+  border: 1px solid #621132;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+main {
+  background-color: #D4C19C;
+  padding: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #621132;
+}
+
+th {
+  background-color: #9D2449;
+  color: #ffffff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #B38E5D;
+}
+
+tbody tr:hover {
+  background-color: #285C4D;
+  color: #ffffff;
+}
