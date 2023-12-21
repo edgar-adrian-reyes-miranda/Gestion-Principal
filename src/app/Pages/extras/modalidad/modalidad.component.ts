@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {Modalidad} from "../../../Clases/modalidad";
 
 @Component({
   selector: 'app-modalidad',
@@ -8,6 +9,9 @@ import { CommonModule } from '@angular/common';
   templateUrl: './modalidad.component.html',
   styleUrl: './modalidad.component.css'
 })
-export class ModalidadComponent {
+export class ModalidadComponent implements  OnInit{
+  modalidades:Modalidad[]=[];
+  ngOnInit(): void {
+  }
 
 }

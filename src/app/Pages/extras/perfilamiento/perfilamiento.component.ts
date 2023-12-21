@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {Perfilamiento} from "../../../Clases/perfilamiento";
 
 @Component({
   selector: 'app-perfilamiento',
@@ -8,6 +9,9 @@ import { CommonModule } from '@angular/common';
   templateUrl: './perfilamiento.component.html',
   styleUrl: './perfilamiento.component.css'
 })
-export class PerfilamientoComponent {
+export class PerfilamientoComponent implements  OnInit{
+  perfilamientos:Perfilamiento[]=[];
+  ngOnInit(): void {
+  }
 
 }

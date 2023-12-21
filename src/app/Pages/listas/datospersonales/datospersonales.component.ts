@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {Personales} from "../../../Clases/personales";
 
 @Component({
   selector: 'app-datospersonales',
@@ -8,6 +9,10 @@ import { CommonModule } from '@angular/common';
   templateUrl: './datospersonales.component.html',
   styleUrl: './datospersonales.component.css'
 })
-export class DatospersonalesComponent {
+export class DatospersonalesComponent implements OnInit{
+  personal:Personales[]=[];
+  ngOnInit(): void {
+  }
+
 
 }

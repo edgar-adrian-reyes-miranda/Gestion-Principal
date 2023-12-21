@@ -1,17 +1,18 @@
 <div class="menu">
     <div class="submenu">
-      <a href="#" class="menuItem"><i class="material-icons">home</i> Inicio</a>
+      <a class="menuItem"><i class="material-icons">home</i> Inicio</a>
       <div class="submenu-content">
+        <a [routerLink]="'/'" class="submenu-item" ><i class="material-icons">menu</i>Principal</a>
         <a  class="submenu-item"><i class="material-icons">exit_to_app</i> Salir</a>
         <a [routerLink]="'/Registro-Administrador'" class="submenu-item"><i class="material-icons">person_pin</i> Registro</a>
         <a [routerLink]="'/Registro-Aspirante'"  class="submenu-item"><i class="material-icons">person_add</i> Registro Alumnos</a>
         <a href="#" class="submenu-item"><i class="material-icons">login</i> Iniciar Sesión</a>
       </div>
     </div>
-  
+
     <!-- Vacantes Submenú -->
     <div class="submenu">
-      <a href="#" class="menuItem"><i class="material-icons">assignment</i> Registro de Información</a>
+      <a  class="menuItem"><i class="material-icons">assignment</i> Registro de Información</a>
       <div class="submenu-content">
         <a [routerLink]="'/lista-personales'" class="submenu-item"><i class="material-icons">person</i> Datos Personales</a>
         <a [routerLink]="'/lista-escolares'" class="submenu-item"><i class="material-icons">school</i> Datos Escolares</a>
@@ -19,37 +20,35 @@
         <a [routerLink]="'/lista-ftd'" class="submenu-item"><i class="material-icons">face</i> Datos FTD</a>
       </div>
     </div>
-  
+
     <!-- Datos extras -->
     <div class="submenu">
-      <a href="#" class="menuItem"><i class="material-icons">more_horiz</i> Extras</a>
+      <a class="menuItem"><i class="material-icons">more_horiz</i> Extras</a>
       <div class="submenu-content">
         <a [routerLink]="'/Universidades'" class="submenu-item"><i class="material-icons">school</i> Universidades</a>
         <a [routerLink]="'/Planes-Educativos'" class="submenu-item"><i class="material-icons">book</i> Planes Educativos</a>
         <a [routerLink]="'/Modalidad'" class="submenu-item"><i class="material-icons">dashboard</i> Modalidad</a>
         <a [routerLink]="'/Grupos'" class="submenu-item"><i class="material-icons">group</i> Grupos</a>
-        <a class="submenu-item"><i class="material-icons">people</i> Tutores</a>
+        <a [routerLink]="'/tutor'" class="submenu-item"><i class="material-icons">people</i> Tutores</a>
         <a [routerLink]="'/Perfilamiento'" class="submenu-item"><i class="material-icons">person_pin</i> Perfilamiento</a>
       </div>
     </div>
-  
+
     <!-- Reportes Submenú -->
     <div class="submenu">
-      <a href="#" class="menuItem"><i class="material-icons">assessment</i> Reportes</a>
+      <a  class="menuItem"><i class="material-icons">assessment</i> Reportes</a>
       <div class="submenu-content">
         <a [routerLink]="'/Excel'" class="submenu-item"><i class="material-icons">table_chart</i> Reportes Excel</a>
         <a [routerLink]="'/PDF'" class="submenu-item"><i class="material-icons">picture_as_pdf</i> Reportes PDF</a>
-        <div class="submenu-content">
           <a [routerLink]="'/Alumnos'" class="submenu-item"><i class="material-icons">person</i> Datos Alumnos</a>
           <a [routerLink]="'/Genero'" class="submenu-item"><i class="material-icons">wc</i> Datos Género</a>
           <a  class="submenu-item"><i class="material-icons">work</i> Datos Proyectos</a>
-        </div>
       </div>
     </div>
-  
+
     <!-- Cursos Submenú -->
     <div class="submenu">
-      <a href="#" class="menuItem"><i class="material-icons">school</i> Cursos</a>
+      <a class="menuItem"><i class="material-icons">school</i> Cursos</a>
       <div class="submenu-content">
         <a [routerLink]="'/Front-End'" class="submenu-item"><i class="material-icons">code</i> Curso FRONT-END</a>
         <a [routerLink]="'/Backend'" class="submenu-item"><i class="material-icons">laptop_mac</i> Curso BACKEND</a>
@@ -57,8 +56,6 @@
         <a [routerLink]="'/Git'" class="submenu-item"><i class="material-icons">screen_share</i> Curso Git</a>
       </div>
     </div>
-  
-    <a [routerLink]="'/informacion'" class="menuItem"><i class="material-icons">info</i> Información</a>
-  </div> 
 
-  <router-outlet></router-outlet>
+    <a [routerLink]="'/informacion'" class="menuItem"><i class="material-icons">info</i> Información</a>
+  </div>

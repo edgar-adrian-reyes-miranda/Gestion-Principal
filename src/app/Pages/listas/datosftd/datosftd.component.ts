@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {Ftd} from "../../../Clases/ftd";
 
 @Component({
   selector: 'app-datosftd',
@@ -8,6 +9,9 @@ import { CommonModule } from '@angular/common';
   templateUrl: './datosftd.component.html',
   styleUrl: './datosftd.component.css'
 })
-export class DatosftdComponent {
+export class DatosftdComponent implements  OnInit{
+  ftd:Ftd[]=[];
+  ngOnInit(): void {
+  }
 
 }

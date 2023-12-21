@@ -21,10 +21,12 @@ import { GitComponent } from './Pages/Cursos/git/git.component';
 import { RegistroadminComponent } from './Pages/Inicio/registroadmin/registroadmin.component';
 import { RegistroaspiranteComponent } from './Pages/Inicio/registroaspirante/registroaspirante.component';
 import { GenerosComponent } from './Pages/Reportes/generos/generos.component';
+import {TutoresComponent} from "./Pages/extras/tutores/tutores.component";
 
 
 const routes: Routes = [
   /*Inicio */
+  /*{path:'', component:MenuComponent,pathMatch:'prefix', redirectTo:'/'},*/
   {path:'Registro-Administrador',component:RegistroadminComponent,pathMatch:'full'},
   {path:'Registro-Aspirante',component:RegistroaspiranteComponent,pathMatch:'full'},
   /*Listas*/
@@ -38,6 +40,7 @@ const routes: Routes = [
   {path:'Modalidad',component:ModalidadComponent, pathMatch:'full'},
   {path:'Grupos',component:GruposComponent, pathMatch:'full'},
   {path:'Perfilamiento',component:PerfilamientoComponent, pathMatch:'full'},
+  {path:'tutor',component:TutoresComponent,pathMatch:'full'},
   /*Reportes*/
   {path:'Excel', component:ExcelComponent, pathMatch:'full'},
   {path:'PDF', component:PdfComponent, pathMatch:'full'},
@@ -50,7 +53,7 @@ const routes: Routes = [
   {path:'Git',component:GitComponent,pathMatch:'full'},
   /*informacion*/
   {path:'informacion', component:InformacionComponent,pathMatch:'full'},
-   
+
 ];
 
 @NgModule({

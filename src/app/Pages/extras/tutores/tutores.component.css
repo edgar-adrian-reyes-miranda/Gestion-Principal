@@ -1,21 +1,18 @@
-*{
-  font-family: Montserrat-Medium;
-}
 .contenedor {
   width: 90%;
+  display: flex;
+  flex-direction: column;
   margin: 20px auto;
 }
 
 header {
   background-color: #621132;
   color: #ffffff;
-  padding: 15px;
-  text-align: center;
+  padding: 10px;
 }
 
 h1 {
-  font-size: 1.8em;
-  margin: 0;
+  font-size: 2em;
 }
 
 main {
@@ -30,7 +27,7 @@ main {
   margin-bottom: 20px;
 }
 
-button.crear-grupo {
+button.agregar-tutor {
   background-color: #13322B;
   color: #ffffff;
   padding: 10px;
