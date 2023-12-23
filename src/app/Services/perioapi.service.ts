@@ -1,18 +1,15 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {Periodo} from "../Clases/periodo";
 import baseurl from "./url";
-import {Planesedu} from "../Clases/planesedu";
 
 @Injectable({
   providedIn: 'root'
 })
-export class PleduapiService {
+export class PerioapiService {
 
   constructor(private http:HttpClient) { }
-  getPlanesedu() {
-    return this.http.get<Planesedu[]>(`${baseurl}planes/lista`);
+  public getPeriodo() {
+    return this.http.get<Periodo[]>(`${baseurl}periodo/lista`);
   }
-
-
 }

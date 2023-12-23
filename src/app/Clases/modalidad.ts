@@ -1,4 +1,4 @@
 export class Modalidad {
-  id_modalidad:number=0;
-  nombre:string="";
+  id_modalida:number=0;
+  tipo_modalidad:string="";
 }

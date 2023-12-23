@@ -22,6 +22,8 @@ import { RegistroadminComponent } from './Pages/Inicio/registroadmin/registroadm
 import { RegistroaspiranteComponent } from './Pages/Inicio/registroaspirante/registroaspirante.component';
 import { GenerosComponent } from './Pages/Reportes/generos/generos.component';
 import {TutoresComponent} from "./Pages/extras/tutores/tutores.component";
+import {HttpClientModule} from "@angular/common/http";
+import {PeriodoComponent} from "./Pages/extras/periodo/periodo.component";
 
 
 const routes: Routes = [
@@ -41,6 +43,7 @@ const routes: Routes = [
   {path:'Grupos',component:GruposComponent, pathMatch:'full'},
   {path:'Perfilamiento',component:PerfilamientoComponent, pathMatch:'full'},
   {path:'tutor',component:TutoresComponent,pathMatch:'full'},
+  {path:'Periodo',component:PeriodoComponent,pathMatch:'full'},
   /*Reportes*/
   {path:'Excel', component:ExcelComponent, pathMatch:'full'},
   {path:'PDF', component:PdfComponent, pathMatch:'full'},
@@ -57,7 +60,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes), HttpClientModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

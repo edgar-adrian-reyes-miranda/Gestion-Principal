@@ -3,7 +3,6 @@
     <h1>Modalidades Escolares</h1>
   </header>
   <div class="actions">
-    <button id="newModality">Nueva Modalidad Escolar</button>
     <input type="text" id="search" placeholder="Buscar por nombre...">
   </div>
   <main>
@@ -12,11 +11,13 @@
       <tr>
         <th>ID</th>
         <th>Nombre</th>
-        <th>Acciones</th>
       </tr>
       </thead>
       <tbody>
-      <!-- Filas de datos -->
+      <tr *ngFor="let modalidad of modalidades">
+        <td>{{ modalidad.id_modalida }}</td>
+        <td>{{ modalidad.tipo_modalidad }}</td>
+      </tr>
       </tbody>
     </table>
   </main>

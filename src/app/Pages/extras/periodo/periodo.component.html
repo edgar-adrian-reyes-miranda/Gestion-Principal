@@ -1,0 +1,21 @@
+<div class="contenedor">
+  <header>
+    <h1>Lista de Periodos</h1>
+  </header>
+  <main>
+    <table>
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Tipo de Periodo</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let peri of periodo">
+        <td>{{ peri.id_periodo }}</td>
+        <td>{{ peri.tipo_periodo }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </main>
+</div>
