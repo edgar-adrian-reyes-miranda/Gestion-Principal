@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {Modalidad} from "../../../Clases/modalidad";
 import {ModapiService} from "../../../Services/modapi.service";
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { HttpClientModule} from "@angular/common/http";
 
 @Component({
   selector: 'app-modalidad',

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {PerioapiService} from "../../../Services/perioapi.service";
-import {error} from "@angular/compiler-cli/src/transformers/util";
+
 
 @Component({
   selector: 'app-periodo',
@@ -21,7 +21,7 @@ export class PeriodoComponent implements  OnInit{
         this.periodo=data;
         console.log(this.periodo)
       },
-      error=>'No se encuentra la tabla periodo');
+      error =>'No se encuentra la tabla periodo');
   }
 
 }
