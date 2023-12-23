@@ -1,4 +1,4 @@
 export class Perfilamiento {
-  id_perf:number=0;
-  descripcion:string="";
+  id_perfilamiento:number=0;
+  nombre:string="";
 }

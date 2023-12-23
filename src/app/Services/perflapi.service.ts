@@ -10,8 +10,8 @@ import {Perfilamiento} from "../Clases/perfilamiento";
 export class PerflapiService {
 
   constructor(private http:HttpClient) { }
-  getPerfilamiento(): Observable<Perfilamiento[]> {
-    return this.http.get<Perfilamiento[]>(`${baseurl}/Perfilamiento`);
+  getPerfilamiento() {
+    return this.http.get<Perfilamiento[]>(`${baseurl}perfilamiento/lista`);
   }
 
   guardarPerfilamiento(Perfilamiento: Perfilamiento): Observable<Perfilamiento> {

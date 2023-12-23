@@ -16,7 +16,14 @@
       </tr>
       </thead>
       <tbody>
-      <!-- Aquí van las filas con los datos -->
+      <tr *ngFor="let lista of universidades">
+        <td>{{lista.id_uni}}</td>
+        <td>{{lista.nombre}}</td>
+        <td>
+          <button class="modificar" title="Modificar"><i class="material-icons">edit</i></button>
+            <button class="eliminar" title="Eliminar"><i class="material-icons">delete</i></button>
+        </td>
+      </tr>
       </tbody>
     </table>
   </main>

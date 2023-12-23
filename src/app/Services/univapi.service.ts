@@ -12,7 +12,7 @@ export class UnivapiService {
   constructor(private http:HttpClient) { }
 
   getUniversidades() {
-    return this.http.get<Universidad[]>(`${baseurl}/universidades/lista`);
+    return this.http.get<Universidad[]>(`${baseurl}universidades/lista`);
   }
 
 }

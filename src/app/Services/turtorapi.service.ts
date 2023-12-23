@@ -10,19 +10,8 @@ import {Tutores} from "../Clases/tutores";
 export class TurtorapiService {
 
   constructor(private http:HttpClient) { }
-  getTutores(): Observable<Tutores[]> {
-    return this.http.get<Tutores[]>(`${baseurl}/tutores`);
+  getTutores() {
+    return this.http.get<Tutores[]>(`${baseurl}tutor/lista`);
   }
 
-  guardarTutores(Tutores: Tutores): Observable<Tutores> {
-    return this.http.post<Tutores>(`${baseurl}/guardar`, Tutores);
-  }
-
-  modificarTutores(id: number, editar: Tutores): Observable<Tutores> {
-    return this.http.put<Tutores>(`${baseurl}/modificar/${id}`, editar);
-  }
-
-  eliminarTutores(id: number): Observable<void> {
-    return this.http.delete<void>(`${baseurl}/${id}`);
-  }
 }

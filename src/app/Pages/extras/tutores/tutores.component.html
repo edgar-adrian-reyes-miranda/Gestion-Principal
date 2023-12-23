@@ -4,35 +4,20 @@
   </header>
   <main>
     <div class="acciones-bar">
-      <button class="agregar-tutor">Agregar Tutor</button>
-      <input type="text" placeholder="Buscar...">
     </div>
     <table>
       <thead>
       <tr>
         <th>ID</th>
         <th>Nombre</th>
-        <th>Acciones</th>
+        
       </tr>
       </thead>
       <tbody>
-      <tr>
-        <td>1</td>
-        <td>John Doe</td>
-        <td>
-          <button class="modificar" title="Modificar"><i class="material-icons">edit</i></button>
-          <button class="eliminar" title="Eliminar"><i class="material-icons">delete</i></button>
-        </td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Jane Smith</td>
-        <td>
-          <button class="modificar" title="Modificar"><i class="material-icons">edit</i></button>
-          <button class="eliminar" title="Eliminar"><i class="material-icons">delete</i></button>
-        </td>
-      </tr>
-      <!-- Agrega más filas según sea necesario -->
+      <tr *ngFor="let tutor of tutores">
+        <td>{{tutor.id_tutor}}</td>
+        <td>{{tutor.nombre}}</td>
+        </tr>
       </tbody>
     </table>
   </main>

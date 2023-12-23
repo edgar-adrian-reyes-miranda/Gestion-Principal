@@ -1,3 +1,4 @@
+import { PerflapiService } from './../../../Services/perflapi.service';
 import {Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {Perfilamiento} from "../../../Clases/perfilamiento";
@@ -10,8 +11,15 @@ import {Perfilamiento} from "../../../Clases/perfilamiento";
   styleUrl: './perfilamiento.component.css'
 })
 export class PerfilamientoComponent implements  OnInit{
-  perfilamientos:Perfilamiento[]=[];
+  perfilamiento:Perfilamiento[]=[];
+  constructor(private Perflapi:PerflapiService){}
   ngOnInit(): void {
+    this.Perflapi.getPerfilamiento().subscribe(
+      (data:Perfilamiento[])=>{
+        this.perfilamiento=data;
+        console.log(this.perfilamiento)
+      }, 
+      error =>'No se encontro ninguna lista');
   }
 
 }

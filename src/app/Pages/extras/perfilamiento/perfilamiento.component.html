@@ -11,12 +11,19 @@
       <thead>
       <tr>
         <th>ID</th>
-        <th>Nombre</th>
+        <th>Descripcion</th>
         <th>Acciones</th>
       </tr>
       </thead>
       <tbody>
-      <!-- Filas de datos -->
+      <tr *ngFor="let perfil of perfilamiento">
+        <td>{{perfil.id_perfilamiento}}</td>
+        <td>{{perfil.nombre}}</td>
+        <td>
+          <button class="modificar" title="Modificar"><i class="material-icons">edit</i></button>
+            <button class="eliminar" title="Eliminar"><i class="material-icons">delete</i></button>
+        </td>
+      </tr>
       </tbody>
     </table>
   </main>

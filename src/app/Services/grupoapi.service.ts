@@ -10,8 +10,8 @@ import {Grupos} from "../Clases/grupos";
 export class GrupoapiService {
 
   constructor(private http:HttpClient) { }
-  getgrupos(): Observable<Grupos[]> {
-    return this.http.get<Grupos[]>(`${baseurl}/grupos`);
+  getgrupos() {
+    return this.http.get<Grupos[]>(`${baseurl}grupos/lista`);
   }
 
   guardargrupos(grupos: Grupos): Observable<Grupos> {
