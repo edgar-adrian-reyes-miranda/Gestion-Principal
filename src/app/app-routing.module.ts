@@ -24,6 +24,7 @@ import { GenerosComponent } from './Pages/Reportes/generos/generos.component';
 import {TutoresComponent} from "./Pages/extras/tutores/tutores.component";
 import {HttpClientModule} from "@angular/common/http";
 import {PeriodoComponent} from "./Pages/extras/periodo/periodo.component";
+import {LoginComponent} from "./Usuario/login/login.component";
 
 
 const routes: Routes = [
@@ -56,6 +57,8 @@ const routes: Routes = [
   {path:'Git',component:GitComponent,pathMatch:'full'},
   /*informacion*/
   {path:'informacion', component:InformacionComponent,pathMatch:'full'},
+  /*Usuario*/
+  {path:'Usuario',component:LoginComponent,pathMatch:'full'},
 
 ];
 
