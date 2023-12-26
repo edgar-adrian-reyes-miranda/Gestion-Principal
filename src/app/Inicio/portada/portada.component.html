@@ -1,0 +1,10 @@
+<div class="portada">
+  <h1>Bienvenido al Sistema de Gestion de Recursos</h1>
+  <div class="botones">
+    <button [routerLink]="isAdminVisible ? '/Login' : '/LoginAdmin'" class="btn" (click)="toggleRole()">
+      <img [src]="isAdminVisible ?   'assets/IMG/5856.png':'assets/IMG/4574122.png' " alt="{{ isAdminVisible ? 'admin' : 'normal' }}">
+      {{ isAdminVisible ? 'Usaurio Pasante' : 'Administrador' }}
+    </button>
+  </div>
+</div>
+<app-menu></app-menu>

@@ -1,4 +1,4 @@
-div.admin {
+.admin {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,15 +6,21 @@ div.admin {
   margin: 0;
   background-color: #56242A; /* Marrón rojizo */
   color: #D4C19C; /* Beige */
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.login-container {
+.register-container {
   background-color: #9D2449; /* Rojo más claro */
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   width: 300px;
+}
+
+h2 {
+  text-align: center;
+  color: #00bfff; /* Azul claro */
+  margin-bottom: 20px;
 }
 
 form {
@@ -27,8 +33,12 @@ label {
 }
 
 input {
-  padding: 8px;
+  padding: 10px;
   margin-bottom: 16px;
+  border: 1px solid #13322B; /* Verde oscuro */
+  border-radius: 4px;
+  background-color: #285C4D; /* Verde más claro */
+  color: #D4C19C; /* Beige */
 }
 
 button {
@@ -43,14 +53,4 @@ button {
 
 button:hover {
   background-color: #285C4D; /* Verde más claro */
-}
-
-a {
-  color: #00bfff; /* Azul claro */
-  text-decoration: none;
-  margin-top: 10px;
-}
-
-a:hover {
-  text-decoration: underline;
 }

@@ -2,11 +2,12 @@ import {Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {Universidad} from "../../../Clases/universidad";
 import { UnivapiService } from 'src/app/Services/univapi.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-universidades',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './universidades.component.html',
   styleUrl: './universidades.component.css'
 })

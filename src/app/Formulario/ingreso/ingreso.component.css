@@ -1,0 +1,61 @@
+.contenedor {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Montserrat-ThinItalic';
+}
+
+header {
+  background-color: #56242A;
+  color: #B38E5D;
+  padding: 10px;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+main {
+  background-color: #9D2449;
+  padding: 20px;
+}
+
+.formulario {
+  width: 490px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #621132;
+}
+
+h2 {
+  font-size: 1.5em;
+  color: #B38E5D;
+}
+
+h3 {
+  font-size: 1em;
+  color: #D4C19C;
+  margin-bottom: 10px;
+  font-family: 'Monserrat-SemiBold';
+}
+
+input,
+select {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+input[type="submit"] {
+  background-color: #56242A;
+  color: #B38E5D;
+  border: none;
+  cursor: pointer;
+}
+
+.material-icons {
+  color: #B38E5D;
+}

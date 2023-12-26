@@ -7,7 +7,10 @@ import { CookieService } from 'ngx-cookie-service';
 import { MenuComponent } from "./Pages/menu/menu.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule} from "@angular/common/http";
-
+import {PortadaComponent} from "./Inicio/portada/portada.component";
+import {CommonModule} from "@angular/common";
+import { FormsModule } from '@angular/forms';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 
 
@@ -18,13 +21,18 @@ import { HttpClientModule} from "@angular/common/http";
     exports: [RouterModule],
     providers: [CookieService],
     bootstrap: [AppComponent],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        MenuComponent,
-        BrowserAnimationsModule,
-        HttpClientModule,
-    ]
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    PortadaComponent,
+    MenuComponent,
+    CommonModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    PortadaComponent,
+    FormsModule,
+    SweetAlert2Module.forRoot(),
+  ]
 })
 export class AppModule {
 }

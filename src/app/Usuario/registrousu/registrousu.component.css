@@ -1,15 +1,15 @@
-div.admin {
+.admin {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  height: 100vh;
+  height: 71.8vh;
   margin: 0;
   background-color: #56242A; /* Marrón rojizo */
   color: #D4C19C; /* Beige */
   font-family: Arial, sans-serif;
 }
 
-.login-container {
+.register-container {
   background-color: #9D2449; /* Rojo más claro */
   padding: 20px;
   border-radius: 8px;
@@ -43,14 +43,4 @@ button {
 
 button:hover {
   background-color: #285C4D; /* Verde más claro */
-}
-
-a {
-  color: #00bfff; /* Azul claro */
-  text-decoration: none;
-  margin-top: 10px;
-}
-
-a:hover {
-  text-decoration: underline;
 }

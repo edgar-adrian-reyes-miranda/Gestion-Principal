@@ -3,11 +3,9 @@
       <a class="menuItem"><i class="material-icons">home</i> Inicio</a>
       <div class="submenu-content">
         <a [routerLink]="'/'" class="submenu-item" ><i class="material-icons">menu</i>Principal</a>
-        <a  class="submenu-item"><i class="material-icons">exit_to_app</i> Salir</a>
-        <a [routerLink]="'/Registro-Administrador'" class="submenu-item"><i class="material-icons">person_pin</i> Registro</a>
-        <a [routerLink]="'/Registro-Aspirante'"  class="submenu-item"><i class="material-icons">person_add</i> Registro Alumnos</a>
-        <a href="#" class="submenu-item"><i class="material-icons">login</i> Iniciar Sesión</a>
-      </div>
+        <a [routerLink]="'/Portada'" class="submenu-item"><i class="material-icons">exit_to_app</i> Salir</a>
+        <a [routerLink]="'/Registro-Admin'" class="submenu-item"><i class="material-icons">person_pin</i> Registro Administrador</a>
+        </div>
     </div>
 
     <!-- Vacantes Submenú -->
@@ -57,6 +55,6 @@
         <a [routerLink]="'/Git'" class="submenu-item"><i class="material-icons">screen_share</i> Curso Git</a>
       </div>
     </div>
-
     <a [routerLink]="'/informacion'" class="menuItem"><i class="material-icons">info</i> Información</a>
   </div>
+<router-outlet></router-outlet>

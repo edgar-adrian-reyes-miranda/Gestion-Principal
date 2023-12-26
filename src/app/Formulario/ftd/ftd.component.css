@@ -1,0 +1,54 @@
+.contenedor {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #13322B;
+  color: #D4C19C;
+  padding: 10px;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+main {
+  background-color: #285C4D;
+  padding: 20px;
+}
+
+.formulario {
+  width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #4E232E;
+}
+
+h2 {
+  font-size: 1.5em;
+  color: #D4C19C;
+}
+
+input,
+select,
+button {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+input[type="submit"] {
+  background-color: #13322B;
+  color: #D4C19C;
+  border: none;
+  cursor: pointer;
+}
+
+.material-icons {
+  color: #D4C19C;
+}

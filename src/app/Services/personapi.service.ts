@@ -10,19 +10,22 @@ import {Personales} from "../Clases/personales";
 export class PersonapiService {
 
   constructor(private http:HttpClient) { }
-  getPersonales(): Observable<Personales[]> {
-    return this.http.get<Personales[]>(`${baseurl}/Personales`);
+  getperson(){
+    return this.http.get<Personales[]>(`${baseurl}personales/lista`)
+  }
+  getPersonales(id:number): Observable<Personales[]> {
+    return this.http.get<Personales[]>(`${baseurl}personales/${id}`);
   }
 
   guardarPersonales(Personales: Personales): Observable<Personales> {
-    return this.http.post<Personales>(`${baseurl}/guardar`, Personales);
+    return this.http.post<Personales>(`${baseurl}personales/guardar`, Personales);
   }
 
   modificarPersonales(id: number, editar: Personales): Observable<Personales> {
-    return this.http.put<Personales>(`${baseurl}/modificar/${id}`, editar);
+    return this.http.put<Personales>(`${baseurl}personales/editar/${id}`, editar);
   }
 
   eliminarPersonales(id: number): Observable<void> {
-    return this.http.delete<void>(`${baseurl}/${id}`);
+    return this.http.delete<void>(`${baseurl}personales/${id}`);
   }
 }

@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InformacionComponent } from './Pages/informacion/informacion.component';
-import { MenuComponent } from './Pages/menu/menu.component';
-import { UniversidadesComponent } from './Pages/extras/universidades/universidades.component';
 import { PlanesEducativosComponent } from './Pages/extras/planes-educativos/planes-educativos.component';
 import { GruposComponent } from './Pages/extras/grupos/grupos.component';
 import { PerfilamientoComponent } from './Pages/extras/perfilamiento/perfilamiento.component';
@@ -18,20 +16,46 @@ import { FrontEndComponent } from './Pages/Cursos/front-end/front-end.component'
 import { BackendComponent } from './Pages/Cursos/backend/backend.component';
 import { InfraestructuraComponent } from './Pages/Cursos/infraestructura/infraestructura.component';
 import { GitComponent } from './Pages/Cursos/git/git.component';
-import { RegistroadminComponent } from './Pages/Inicio/registroadmin/registroadmin.component';
-import { RegistroaspiranteComponent } from './Pages/Inicio/registroaspirante/registroaspirante.component';
 import { GenerosComponent } from './Pages/Reportes/generos/generos.component';
 import {TutoresComponent} from "./Pages/extras/tutores/tutores.component";
 import {HttpClientModule} from "@angular/common/http";
 import {PeriodoComponent} from "./Pages/extras/periodo/periodo.component";
 import {LoginComponent} from "./Usuario/login/login.component";
+import {PortadaComponent} from "./Inicio/portada/portada.component";
+import {AdminComponent} from "./Admins/admin/admin.component";
+import {CommonModule} from "@angular/common";
+import {BrowserModule} from "@angular/platform-browser";
+import {RegistroadminComponent} from "./Admins/registroadmin/registroadmin.component";
+import {RegistrousuComponent} from "./Usuario/registrousu/registrousu.component";
+import {MenuComponent} from "./Pages/menu/menu.component";
+import {PersonalesComponent} from "./Formulario/personales/personales.component";
+import {EscolaresComponent} from "./Formulario/escolares/escolares.component";
+import {IngresoComponent} from "./Formulario/ingreso/ingreso.component";
+import {FTDComponent} from "./Formulario/ftd/ftd.component";
+import { UniversidadComponent } from './Formulario/universidad/universidad.component';
+import { UniversidadesComponent } from './Pages/extras/universidades/universidades.component';
+
 
 
 const routes: Routes = [
+
+  /*Frontal*/
+  {path:'',component:PortadaComponent, pathMatch:'full',redirectTo:''},
+  {path:'Login', component:LoginComponent,pathMatch:'full'},
+  {path:'LoginAdmin',component:AdminComponent, pathMatch:'full'},
+  {path:'Registro-Admin',component:RegistroadminComponent,pathMatch:'full'},
+  {path:'Registro-usuario',component:RegistrousuComponent, pathMatch:'full'},
+
   /*Inicio */
-  /*{path:'', component:MenuComponent,pathMatch:'prefix', redirectTo:'/'},*/
-  {path:'Registro-Administrador',component:RegistroadminComponent,pathMatch:'full'},
-  {path:'Registro-Aspirante',component:RegistroaspiranteComponent,pathMatch:'full'},
+  {path:'Menu', component:MenuComponent,pathMatch:'full'},
+
+  /*Formularios*/
+  {path:'Datos-personales',component:PersonalesComponent,pathMatch:'full'},
+  {path:'Datos-escolares', component:EscolaresComponent,pathMatch:'full'},
+  {path:'Datos-Ingresos', component:IngresoComponent,pathMatch:'full'},
+  {path:'Datos-FTD', component:FTDComponent,pathMatch:'full'},
+  {path:'Nueva-Universidad', component:UniversidadComponent,pathMatch:'full'},
+
   /*Listas*/
   {path:'lista-personales',component:DatospersonalesComponent,pathMatch:'full'},
   {path:'lista-escolares',component:DatosescolaresComponent,pathMatch:'full'},
@@ -63,7 +87,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), HttpClientModule],
+  imports: [RouterModule.forRoot(routes), HttpClientModule, CommonModule, BrowserModule,],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
