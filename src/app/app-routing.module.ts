@@ -32,8 +32,9 @@ import {PersonalesComponent} from "./Formulario/personales/personales.component"
 import {EscolaresComponent} from "./Formulario/escolares/escolares.component";
 import {IngresoComponent} from "./Formulario/ingreso/ingreso.component";
 import {FTDComponent} from "./Formulario/ftd/ftd.component";
-import { UniversidadComponent } from './Formulario/universidad/universidad.component';
 import { UniversidadesComponent } from './Pages/extras/universidades/universidades.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NuevaUniversidadComponent } from './Formulario/nueva-universidad/nueva-universidad.component';
 
 
 
@@ -54,8 +55,8 @@ const routes: Routes = [
   {path:'Datos-escolares', component:EscolaresComponent,pathMatch:'full'},
   {path:'Datos-Ingresos', component:IngresoComponent,pathMatch:'full'},
   {path:'Datos-FTD', component:FTDComponent,pathMatch:'full'},
-  {path:'Nueva-Universidad', component:UniversidadComponent,pathMatch:'full'},
-
+  {path:'Nueva-Universidad', component:NuevaUniversidadComponent, pathMatch:'full'},
+  {path:'Nueva-Universidad/:id', component:NuevaUniversidadComponent, pathMatch:'full'},
   /*Listas*/
   {path:'lista-personales',component:DatospersonalesComponent,pathMatch:'full'},
   {path:'lista-escolares',component:DatosescolaresComponent,pathMatch:'full'},
@@ -87,7 +88,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), HttpClientModule, CommonModule, BrowserModule,],
+  imports: [RouterModule.forRoot(routes), HttpClientModule, 
+    CommonModule, BrowserModule,FormsModule,ReactiveFormsModule,],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

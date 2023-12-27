@@ -1,68 +1,128 @@
-/* Utiliza el mismo estilo de la tabla anterior, ya que la apariencia será similar */
+/** {
+  margin: 0;
+  padding: 0;
+ font-family: 'Monserrat-Italic';
+  background-color: #D4C19C; /* Marrón rojizo 
+  color: #D4C19C; /* Beige 
+}*/
+
 .contenedor {
-  width: 90%;
-  margin: 20px auto;
+  max-width: 800px;
+  margin: 50px auto;
+  font-family: 'Montserrat-Italic';
 }
 
 header {
-  background-color: #621132;
-  color: #ffffff;
-  padding: 10px;
   text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Montserrat-Italic';
 }
 
-div.acciones {
+h1 {
+  color: #9D2449; /* Beige */
+}
+
+.admin {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  background-color: #D4C19C;
-  padding: 10px;
+}
+
+.register-container {
+  background-color: #9D2449; /* Rojo más claro */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 300px;
+}
+
+h2 {
+  text-align: center;
+  color: #D4C19C; /* Beige */
   margin-bottom: 20px;
 }
 
-button#nuevaUniversidad {
-  background-color: #285C4D;
-  color: #ffffff;
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 8px;
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #13322B; /* Verde oscuro */
+  border-radius: 4px;
+  background-color: #285C4D; /* Verde más claro */
+  color: #D4C19C; /* Beige */
+}
+
+button {
+  background-color: #13322B; /* Verde oscuro */
+  color: #D4C19C; /* Beige */
   padding: 10px;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #285C4D; /* Verde más claro */
+}
+
+.acciones {
+  margin: 20px 0;
 }
 
 input#busqueda {
-  width: 30%;
+  width: 100%;
   padding: 10px;
-  border: 1px solid #621132;
-  border-radius: 5px;
-  box-sizing: border-box;
+  border: 1px solid #13322B; /* Verde oscuro */
+  border-radius: 4px;
+  background-color: #285C4D; /* Verde más claro */
+  color: #D4C19C; /* Beige */
 }
 
 main {
-  background-color: #D4C19C;
-  padding: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
+  margin-top: 20px;
 }
 
-th, td {
+thead th {
+  background-color: #9D2449; /* Rojo más claro */
+  color: #D4C19C; /* Beige */
   padding: 10px;
   text-align: left;
-  border-bottom: 1px solid #621132;
 }
 
-th {
-  background-color: #9D2449;
-  color: #ffffff;
+tbody td {
+  border: 1px solid #13322B; /* Verde oscuro */
+  padding: 10px;
+  text-align: left;
 }
 
-tbody tr:nth-child(even) {
-  background-color: #B38E5D;
+.modificar,
+.eliminar {
+  background-color: #13322B; /* Verde oscuro */
+  color: #D4C19C; /* Beige */
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-tbody tr:hover {
-  background-color: #285C4D;
-  color: #ffffff;
+.modificar:hover,
+.eliminar:hover {
+  background-color: #285C4D; /* Verde más claro */
+  color: #D4C19C; /* Beige */
 }
