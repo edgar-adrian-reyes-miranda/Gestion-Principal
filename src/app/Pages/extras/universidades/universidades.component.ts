@@ -59,7 +59,7 @@ export class UniversidadesComponent implements OnInit{
 editarUniversidad(id_uni: number | undefined) {
   // Verificar si id_uni tiene un valor antes de navegar
   if (id_uni !== undefined) {
-    this.router.navigate(['/Nueva-Universidad', id_uni]);
+    this.router.navigate(['/Nueva-Universidad/forms/', id_uni]);
   } else {
     console.error('ID de universidad no válido:', id_uni);
   }

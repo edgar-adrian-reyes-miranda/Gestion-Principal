@@ -56,7 +56,7 @@ const routes: Routes = [
   {path:'Datos-Ingresos', component:IngresoComponent,pathMatch:'full'},
   {path:'Datos-FTD', component:FTDComponent,pathMatch:'full'},
   {path:'Nueva-Universidad', component:NuevaUniversidadComponent, pathMatch:'full'},
-  {path:'Nueva-Universidad/:id', component:NuevaUniversidadComponent, pathMatch:'full'},
+  {path:'Nueva-Universidad/forms/:id_uni', component:NuevaUniversidadComponent, pathMatch:'full'},
   /*Listas*/
   {path:'lista-personales',component:DatospersonalesComponent,pathMatch:'full'},
   {path:'lista-escolares',component:DatosescolaresComponent,pathMatch:'full'},
