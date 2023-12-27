@@ -10,7 +10,9 @@
         <th>Nombre</th>
         <th>Primer Apellido</th>
         <th>Segundo Apellido</th>
+        <th>Correo</th>
         <th>CURP</th>
+        <th>EDAD</th>
         <th>Dirección</th>
         <th>Género</th>
         <th>Teléfono Personal</th>
@@ -19,12 +21,24 @@
       </tr>
       </thead>
       <tbody>
-      <tr>
-      <tr  >
+      <tr *ngFor="let person of personal">
+      <td>{{person.id_person}}</td>
+      <td>{{person.nombre}}</td>
+      <td>{{person.p_apellido}}</td>
+      <td>{{person.s_apellido}}</td>
+      <td>{{person.correo}}</td>
+      <td>{{person.curp}}</td>
+      <td>{{person.edad}}</td>
+      <td>{{person.direccion}}</td>
+      <td>{{person.genero}}</td>
+      <td>{{person.telefono}}</td>
+      <td>{{person.telefono_casa}}</td>
+      <td>
+      <button class="eliminar" title="Eliminar" (click)="eliminarpersonal(person.id_person)"> <i class="material-icons">delete</i></button>
+        <button class="modificar" title="Modificar"  [routerLink]="['Datopersonal/forms/', person.id_person]" routerLinkActive="router-link-active" ><i class="material-icons">edit</i></button>
+      </td>
 
       </tr>
-
-      <!-- Agrega más filas según sea necesario -->
       </tbody>
     </table>
   </main>

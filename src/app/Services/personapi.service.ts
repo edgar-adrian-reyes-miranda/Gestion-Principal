@@ -13,16 +13,16 @@ export class PersonapiService {
   getperson(){
     return this.http.get<Personales[]>(`${baseurl}personales/lista`)
   }
-  getPersonales(id:number): Observable<Personales[]> {
-    return this.http.get<Personales[]>(`${baseurl}personales/${id}`);
+  getPersonales(id_person:number) {
+    return this.http.get<Personales>(`${baseurl}personales/${id_person}`);
   }
 
   guardarPersonales(Personales: Personales): Observable<Personales> {
     return this.http.post<Personales>(`${baseurl}personales/guardar`, Personales);
   }
 
-  modificarPersonales(id: number, editar: Personales): Observable<Personales> {
-    return this.http.put<Personales>(`${baseurl}personales/editar/${id}`, editar);
+  modificarPersonales(Personales: Personales): Observable<Personales> {
+    return this.http.put<Personales>(`${baseurl}personales/editar/${Personales.id_person}`, Personales);
   }
 
   eliminarPersonales(id: number): Observable<void> {

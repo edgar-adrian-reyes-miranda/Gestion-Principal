@@ -4,7 +4,7 @@
   </header>
   <main>
     <div class="acciones-bar">
-      <button class="crear-grupo">Crear Grupo</button>
+      <button class="crear-grupo" [routerLink]="'/Nuevo-grupo'" routerLinkActive="router-link-active"  >Crear Grupo</button>
       <input type="text" placeholder="Buscar...">
     </div>
     <table>
@@ -20,8 +20,8 @@
         <td>{{grupo.id_grupo}}</td>
         <td>{{grupo.nombre}}</td>
         <td>
-          <button class="modificar" title="Modificar"><i class="material-icons">edit</i></button>
-          <button class="eliminar" title="Eliminar"><i class="material-icons">delete</i></button>
+          <button class="modificar" title="Modificar" [routerLink]="['/Nuevo-grupo/forms', grupo.id_grupo]"><i class="material-icons">edit</i></button>
+          <button class="eliminar" title="Eliminar" (click)="eliminargrupo(grupo.id_grupo)"><i class="material-icons">delete</i></button>
         </td>
       </tr>
       

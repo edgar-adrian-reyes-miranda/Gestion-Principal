@@ -13,16 +13,19 @@ export class PerflapiService {
   getPerfilamiento() {
     return this.http.get<Perfilamiento[]>(`${baseurl}perfilamiento/lista`);
   }
-
-  guardarPerfilamiento(Perfilamiento: Perfilamiento): Observable<Perfilamiento> {
-    return this.http.post<Perfilamiento>(`${baseurl}/guardar`, Perfilamiento);
+  getPerfilamientoporid(id_perfilamiento:number) {
+    return this.http.get<Perfilamiento>(`${baseurl}perfilamiento/${id_perfilamiento}`);
   }
 
-  modificarPerfilamiento(id: number, editar: Perfilamiento): Observable<Perfilamiento> {
-    return this.http.put<Perfilamiento>(`${baseurl}/modificar/${id}`, editar);
+  guardarPerfilamiento(Perfilamiento: Perfilamiento): Observable<Perfilamiento> {
+    return this.http.post<Perfilamiento>(`${baseurl}perfilamiento/guardar`, Perfilamiento);
+  }
+
+  modificarPerfilamiento(Perfilamiento: Perfilamiento): Observable<Perfilamiento> {
+    return this.http.put<Perfilamiento>(`${baseurl}perfilamiento/editar/${Perfilamiento.id_perfilamiento}`, Perfilamiento);
   }
 
   eliminarPerfilamiento(id: number): Observable<void> {
-    return this.http.delete<void>(`${baseurl}/${id}`);
+    return this.http.delete<void>(`${baseurl}perfilamiento/${id}`);
   }
 }

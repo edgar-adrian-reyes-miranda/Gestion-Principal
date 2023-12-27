@@ -3,7 +3,7 @@
     <h1>Perfilamientos</h1>
   </header>
   <div class="actions">
-    <button id="newPerfilamiento">Nuevo Perfilamiento</button>
+    <button id="newPerfilamiento" [routerLink]="'/Nuevo-perfil'" routerLinkActive="router-link-active"  >Nuevo Perfilamiento</button>
     <input type="text" id="search" placeholder="Buscar por nombre...">
   </div>
   <main>
@@ -20,8 +20,8 @@
         <td>{{perfil.id_perfilamiento}}</td>
         <td>{{perfil.nombre}}</td>
         <td>
-          <button class="modificar" title="Modificar"><i class="material-icons">edit</i></button>
-            <button class="eliminar" title="Eliminar"><i class="material-icons">delete</i></button>
+          <button class="modificar" title="Modificar" [routerLink]="['/Nuevo-perfil/forms', perfil.id_perfilamiento]" ><i class="material-icons">edit</i></button>
+            <button class="eliminar" title="Eliminar" (click)="eliminarperfil(perfil.id_perfilamiento)"><i class="material-icons">delete</i></button>
         </td>
       </tr>
       </tbody>

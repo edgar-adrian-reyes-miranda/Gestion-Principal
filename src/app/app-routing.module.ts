@@ -35,6 +35,8 @@ import {FTDComponent} from "./Formulario/ftd/ftd.component";
 import { UniversidadesComponent } from './Pages/extras/universidades/universidades.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NuevaUniversidadComponent } from './Formulario/nueva-universidad/nueva-universidad.component';
+import { NuevoGrupoComponent } from './Formulario/nuevo-grupo/nuevo-grupo.component';
+import { NuevoPerfilamientoComponent } from './Formulario/nuevo-perfilamiento/nuevo-perfilamiento.component';
 
 
 
@@ -52,11 +54,20 @@ const routes: Routes = [
 
   /*Formularios*/
   {path:'Datos-personales',component:PersonalesComponent,pathMatch:'full'},
+  {path:'Datopersonal/forms/:id_person', component:PersonalesComponent, pathMatch:'full'},
   {path:'Datos-escolares', component:EscolaresComponent,pathMatch:'full'},
+  {path:'Datoescolar/forms/:id_escolar', component:EscolaresComponent, pathMatch:'full'},
   {path:'Datos-Ingresos', component:IngresoComponent,pathMatch:'full'},
+  {path:'DatoIngreso/forms/:id_ingreso', component:IngresoComponent, pathMatch:'full'},
   {path:'Datos-FTD', component:FTDComponent,pathMatch:'full'},
+  {path:'Datoftd/forms/:id_ftd', component:FTDComponent, pathMatch:'full'},
   {path:'Nueva-Universidad', component:NuevaUniversidadComponent, pathMatch:'full'},
   {path:'Nueva-Universidad/forms/:id_uni', component:NuevaUniversidadComponent, pathMatch:'full'},
+  {path:'Nuevo-grupo', component:NuevoGrupoComponent, pathMatch:'full'},
+  {path:'Nuevo-grupo/forms/:id_grupo', component:NuevoGrupoComponent, pathMatch:'full'},
+  {path:'Nuevo-perfil', component:NuevoPerfilamientoComponent, pathMatch:'full'},
+  {path:'Nuevo-perfil/forms/:id_perfilamiento', component:NuevoPerfilamientoComponent, pathMatch:'full'},
+  
   /*Listas*/
   {path:'lista-personales',component:DatospersonalesComponent,pathMatch:'full'},
   {path:'lista-escolares',component:DatosescolaresComponent,pathMatch:'full'},

@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Router, RouterLink, RouterOutlet} from "@angular/router";
-import {Personales} from "../../Clases/personales";
 import {PersonapiService} from "../../Services/personapi.service";
+import { Personales } from 'src/app/Clases/personales';
+
 
 @Component({
   selector: 'app-personales',
@@ -11,7 +12,7 @@ import {PersonapiService} from "../../Services/personapi.service";
   styleUrl: './personales.component.css'
 })
 export class PersonalesComponent implements OnInit{
-
+person:Personales[]=[];
  
 Personales = {
   nombre:'string',
