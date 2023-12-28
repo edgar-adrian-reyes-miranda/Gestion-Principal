@@ -1,0 +1,24 @@
+<div class="contenedor">
+    <header>
+      <h1>Lista de Tramites</h1>
+    </header>
+    <main>
+      <div class="acciones-bar">
+      </div>
+      <table>
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Tipo Tramite</th>
+          
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let tramite of Tramites">
+          <td>{{tramite.id_tramite}}</td>
+          <td>{{tramite.tipo_tramite}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </div>

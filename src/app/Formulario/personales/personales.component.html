@@ -11,7 +11,7 @@
       <input type="text" name="Segundo Apellido" placeholder="Segundo Apellido">
       
       <h2><i class="material-icons"></i> Información de contacto</h2>
-      <select name="genero" placeholder="Género"></select>
+      <input type="text" name="genero" placeholder="Género">
       <input type="text" name="curp" placeholder="CURP">
       <input type="text" name="estado" placeholder="Estados">
       <input type="text" name="ciudad o municipio" placeholder="Ciudad o Municipio">
@@ -21,7 +21,7 @@
       <input type="tel" name="celular" placeholder="Celular">
       <input type="email" name="correoPersonal" placeholder="Correo">
       
-      <button type="submit" >Siguiente</button>
+      <button [routerLink]="'/Datos-escolares'"  type="submit" >Siguiente</button>
     </form>
     
   </main>

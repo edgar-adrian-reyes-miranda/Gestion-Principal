@@ -37,6 +37,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NuevaUniversidadComponent } from './Formulario/nueva-universidad/nueva-universidad.component';
 import { NuevoGrupoComponent } from './Formulario/nuevo-grupo/nuevo-grupo.component';
 import { NuevoPerfilamientoComponent } from './Formulario/nuevo-perfilamiento/nuevo-perfilamiento.component';
+import { TramiteComponent } from './Pages/extras/tramite/tramite.component';
+import { BorradosComponent } from './Pages/borrados/borrados.component';
 
 
 
@@ -73,6 +75,8 @@ const routes: Routes = [
   {path:'lista-escolares',component:DatosescolaresComponent,pathMatch:'full'},
   {path:'lista-ingresos',component:DatosingresosComponent,pathMatch:'full'},
   {path:'lista-ftd',component:DatosftdComponent,pathMatch:'full'},
+  
+  
   /*extras*/
   {path:'Universidades', component:UniversidadesComponent,pathMatch:'full'},
   {path:'Planes-Educativos',component:PlanesEducativosComponent, pathMatch:'full'},
@@ -81,20 +85,30 @@ const routes: Routes = [
   {path:'Perfilamiento',component:PerfilamientoComponent, pathMatch:'full'},
   {path:'tutor',component:TutoresComponent,pathMatch:'full'},
   {path:'Periodo',component:PeriodoComponent,pathMatch:'full'},
+  {path:'Tramite',component:TramiteComponent, pathMatch:'full'},
+
   /*Reportes*/
   {path:'Excel', component:ExcelComponent, pathMatch:'full'},
   {path:'PDF', component:PdfComponent, pathMatch:'full'},
   {path:'Alumnos', component:AlumnosComponent, pathMatch:'full'},
   {path:'Genero', component:GenerosComponent, pathMatch:'full'},
+
+
   /*Cursos*/
   {path:'Front-End',component:FrontEndComponent, pathMatch:'full'},
   {path:'Backend',component:BackendComponent, pathMatch:'full'},
   {path:'Infraestructura', component:InfraestructuraComponent,pathMatch:'full'},
   {path:'Git',component:GitComponent,pathMatch:'full'},
+
+
   /*informacion*/
   {path:'informacion', component:InformacionComponent,pathMatch:'full'},
+  
   /*Usuario*/
   {path:'Usuario',component:LoginComponent,pathMatch:'full'},
+
+  /*borrados logicos */
+  {path:'Borrados', component:BorradosComponent, pathMatch:'full'},
 
 ];
 
