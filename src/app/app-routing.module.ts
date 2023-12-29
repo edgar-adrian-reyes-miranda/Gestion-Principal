@@ -56,13 +56,13 @@ const routes: Routes = [
 
   /*Formularios*/
   {path:'Datos-personales',component:PersonalesComponent,pathMatch:'full'},
-  {path:'Datopersonal/forms/:id_person', component:PersonalesComponent, pathMatch:'full'},
+  {path:'Datos-personales/forms/:id_person', component:PersonalesComponent, pathMatch:'full'},
   {path:'Datos-escolares', component:EscolaresComponent,pathMatch:'full'},
-  {path:'Datoescolar/forms/:id_escolar', component:EscolaresComponent, pathMatch:'full'},
+  {path:'Datos-escolares/forms/:id_escolar', component:EscolaresComponent, pathMatch:'full'},
   {path:'Datos-Ingresos', component:IngresoComponent,pathMatch:'full'},
-  {path:'DatoIngreso/forms/:id_ingreso', component:IngresoComponent, pathMatch:'full'},
+  {path:'Datos-Ingresos/forms/:id_ingreso', component:IngresoComponent, pathMatch:'full'},
   {path:'Datos-FTD', component:FTDComponent,pathMatch:'full'},
-  {path:'Datoftd/forms/:id_ftd', component:FTDComponent, pathMatch:'full'},
+  {path:'Datos-FTD/forms/:id_ftd', component:FTDComponent, pathMatch:'full'},
   {path:'Nueva-Universidad', component:NuevaUniversidadComponent, pathMatch:'full'},
   {path:'Nueva-Universidad/forms/:id_uni', component:NuevaUniversidadComponent, pathMatch:'full'},
   {path:'Nuevo-grupo', component:NuevoGrupoComponent, pathMatch:'full'},

@@ -1,12 +1,15 @@
 import {Universidad} from "./universidad";
-import {Modalidad} from "./modalidad";
 import {Planesedu} from "./planesedu";
+import { Periodo } from "./periodo";
+import { ModalidadEscolar } from "./modalidad-escolar";
 
 export class Escolares {
-  id_escolar:number=0;
-  correo_ins:string="";
-  matricula:string="";
+  id_escolar?:number;
+  correo_inst?:string;
+  matricula?:string;
+  carrera?:string;
   universidades:Universidad= new Universidad();
-  modalidadesesco:Modalidad= new Modalidad();
+  modalidadesesco:ModalidadEscolar= new ModalidadEscolar();
   planeducativo:Planesedu= new Planesedu();
+  periodo:Periodo= new Periodo();
 }

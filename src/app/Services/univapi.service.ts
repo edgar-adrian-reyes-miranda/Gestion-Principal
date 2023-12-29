@@ -1,7 +1,7 @@
 import { Universidad } from 'src/app/Clases/universidad';
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {Observable, map} from "rxjs";
 import baseurl from "./url";
 
 @Injectable({
@@ -29,4 +29,9 @@ export class UnivapiService {
     return this.http.delete<void>(`${baseurl}universidades/${id}`);
   }
 
+  getUniversidadeslista():Observable<Universidad[]> {
+    return this.http.get(`${baseurl}universidades/lista`).pipe(
+      map(Universidad=> Universidad as Universidad[])
+    );
+  }
 }

@@ -13,12 +13,14 @@
         <th>Correo</th>
         <th>CURP</th>
         <th>EDAD</th>
+        <th>Estado</th>
+        <th>Municipio</th>
         <th>Dirección</th>
         <th>Género</th>
-        <th>Teléfono Personal</th>
+        <th>Teléfono</th>
         <th>Teléfono de Casa</th>
         <th>Acciones</th>
-        <th>FTD</th>
+       
       </tr>
       </thead>
       <tbody>
@@ -31,13 +33,15 @@
       <td>{{person.curp}}</td>
       <td>{{person.edad}}</td>
       <td>{{person.direccion}}</td>
+      <th>{{person.estados}}</th>
+      <th>{{person.municipio}}</th>
       <td>{{person.genero}}</td>
       <td>{{person.telefono}}</td>
       <td>{{person.telefono_casa}}</td>
-      <td></td>
+      
       <td>
       <button class="eliminar" title="Eliminar" (click)="eliminarpersonal(person.id_person)"> <i class="material-icons">delete</i></button>
-        <button class="modificar" title="Modificar"  [routerLink]="['Datopersonal/forms/', person.id_person]" routerLinkActive="router-link-active" ><i class="material-icons">edit</i></button>
+        <button class="modificar" title="Modificar"  [routerLink]="['/Datos-personales/forms/',person.id_person]"><i class="material-icons">edit</i></button>
       </td>
 
       </tr>

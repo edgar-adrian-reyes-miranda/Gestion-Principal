@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Universidad } from './../../Clases/universidad';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule,  ReactiveFormsModule,  Validators } from '@angular/forms';
+import { FormsModule,  ReactiveFormsModule,  Validators } from '@angular/forms';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { UnivapiService } from 'src/app/Services/univapi.service';
 

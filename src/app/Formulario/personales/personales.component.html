@@ -1,29 +1,106 @@
 <div class="usuario">
-<div class="contenedor">
-  <header>
-    <h1>Registro de Información Personal</h1>
-  </header>
-  <main>
-    <form class="formulario"  >
-      <h2><i class="material-icons"></i> Información personal</h2>
-      <input type="text" name="nombre(s)" placeholder="Nombre(s)" >
-      <input type="text" name="Primer Apellido" placeholder="Primer Apellido">
-      <input type="text" name="Segundo Apellido" placeholder="Segundo Apellido">
-      
-      <h2><i class="material-icons"></i> Información de contacto</h2>
-      <input type="text" name="genero" placeholder="Género">
-      <input type="text" name="curp" placeholder="CURP">
-      <input type="text" name="estado" placeholder="Estados">
-      <input type="text" name="ciudad o municipio" placeholder="Ciudad o Municipio">
-      <input type="text" name="Domicilio" placeholder="Domicilio">
-      
-      <h2><i class="material-icons"></i> Información de contacto</h2>
-      <input type="tel" name="celular" placeholder="Celular">
-      <input type="email" name="correoPersonal" placeholder="Correo">
-      
-      <button [routerLink]="'/Datos-escolares'"  type="submit" >Siguiente</button>
-    </form>
-    
-  </main>
-</div>
+  <div class="contenedor">
+    <header>
+      <h1>Registro de Información Personal</h1>
+    </header>
+    <main>
+      <form class="formulario">
+        <h2><i class="material-icons"></i> Información personal</h2>
+        <input
+          type="text"
+          name="nombre"
+          placeholder="Nombre(s)"
+          required
+          [(ngModel)]="person.nombre"
+        />
+        <input
+          type="text"
+          name="Primer Apellido"
+          placeholder="Primer Apellido"
+          required
+          [(ngModel)]="person.p_apellido"
+        />
+        <input
+          type="text"
+          name="Segundo Apellido"
+          placeholder="Segundo Apellido"
+          required
+          [(ngModel)]="person.s_apellido"
+        />
+
+        <h2><i class="material-icons"></i> Información de contacto</h2>
+        <input
+          type="text"
+          name="genero"
+          placeholder="Género"
+          required
+          [(ngModel)]="person.genero"
+        />
+        <input
+          type="text"
+          name="curp"
+          placeholder="CURP"
+          required
+          [(ngModel)]="person.curp"
+        />
+        <input
+          type="text"
+          name="estado"
+          placeholder="Estados"
+          required
+          [(ngModel)]="person.estados"
+        />
+        <input
+          type="text"
+          name="ciudad o municipio"
+          placeholder="Ciudad o Municipio"
+          required
+          [(ngModel)]="person.municipio"
+        />
+        <input
+          type="text"
+          name="Domicilio"
+          placeholder="Domicilio"
+          required
+          [(ngModel)]="person.direccion"
+        />
+
+        <h2><i class="material-icons"></i> Información de contacto</h2>
+        <input
+          type="tel"
+          name="celular"
+          placeholder="Celular"
+          required
+          [(ngModel)]="person.telefono"
+        />
+        <input
+          type="email"
+          name="correoPersonal"
+          placeholder="Correo"
+          required
+          [(ngModel)]="person.correo"
+        />
+        <input
+          type="tel"
+          name="telefono_casa"
+          placeholder="Telefono Casa"
+          required
+          [(ngModel)]="person.telefono_casa"
+        />
+
+        <button
+          [routerLink]="'/Datos-Ingresos'"
+          role="button"
+          (click)="guardar()"
+          *ngIf="!person.id_person; else elseBlock"
+          type="submit"
+        >
+          Siguiente
+        </button>
+        <ng-template #elseBlock>
+          <button role="button" (click)="editarPersonaes()">Actualizar</button>
+        </ng-template>
+      </form>
+    </main>
+  </div>
 </div>

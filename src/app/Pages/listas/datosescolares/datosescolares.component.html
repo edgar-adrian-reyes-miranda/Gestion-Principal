@@ -11,14 +11,28 @@
         <th>Carrera</th>
         <th>Universidad</th>
         <th>Matrícula</th>
-        <th>Modalidad</th>
+        <th>Modalidad Escolar</th>
         <th>Plan de Estudio</th>
         <th>Periodo</th>
         <th>Acciones</th>
       </tr>
       </thead>
       <tbody>
+        <tr *ngFor="let escolar of Escolares">
+          <td>{{escolar.id_escolar}}</td>
+          <td>{{escolar.correo_inst}}</td>
+          <td>{{escolar.carrera}}</td>
+          <td>{{escolar.universidades.nombre}}</td>
+          <td>{{escolar.matricula}}</td>
+          <td>{{escolar.modalidadesesco.tipo_modalidad}}</td>
+          <td>{{escolar.planeducativo.nombre}}</td>
+          <td>{{escolar.periodo.tipo_periodo}}</td> 
 
+          <td>
+          <button class="eliminar" title="Eliminar" (click)="eliminarEscolar(escolar.id_escolar)"> <i class="material-icons">delete</i></button>
+          <button class="modificar" title="Modificar"  [routerLink]="['/Datos-escolares/forms/', escolar.id_escolar]"><i class="material-icons">edit</i></button>
+            </td>         
+        </tr>
       </tbody>
     </table>
   </main>

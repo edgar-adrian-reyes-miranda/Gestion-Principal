@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {Observable, map} from "rxjs";
 import baseurl from "./url";
 import {Planesedu} from "../Clases/planesedu";
 
@@ -14,5 +14,10 @@ export class PleduapiService {
     return this.http.get<Planesedu[]>(`${baseurl}planes/lista`);
   }
 
+  getPlanesEduLista():Observable<Planesedu[]>{
+    return this.http.get(`${baseurl}planes/lista`).pipe(
+      map(Planesedu=> Planesedu as Planesedu[])
+    );
+  }
 
 }

@@ -4,19 +4,96 @@
   </header>
   <main>
     <section class="formulario">
-      <h2><i class="material-icons"></i> Información </h2>
-      <input type="text" name="tramite" placeholder="tramites">
-      <select name="perfilamiento"></select>
-      <select name="Horario" placeholder="Horario"></select>
-      <select name="turno"></select>
-      <select name="modalidad" placeholder="modalidad"></select>
-      <h3>Sube tu CV y tu Historial Academico en una link de Google Drive donde haras una
-      carpeta por cada uno y que en ambos esten en pdf tus archivos, despues pega la ligas
-      en cada campo donde los guardaste, recuerda poner los link en publico</h3>
-      <input  type="text" name="cv" placeholder="cv">
-      <input type="HistorialAcademico" name="Historialacademico" placeholder="historialAcademico">
+      <h2><i class="material-icons"></i> Información</h2>
+      <label for="Tramite">Tramite a realizar:</label>
+      <select
+        name="Tramite"
+        placeholder="Tramites"
+        required
+        [(ngModel)]="ingreso.tramite.tipo_tramite"
+      >
+        <option [ngValue]="null">Elije tu Tipo tramite</option>
+        <option *ngFor="let tramite of Tramites" [ngValue]="tramite">
+          {{ tramite.tipo_tramite }}
+        </option>
+      </select>
+      <label for="Perfilameinto">Perfilamiento</label>
+      <select
+        name="perfilamiento"
+        required
+        [(ngModel)]="ingreso.perfilamiento.nombre"
+      >
+        <option [ngValue]="null"></option>
+        <option
+          *ngFor="let perfil of Perfilamiento"
+          [ngValue]="perfil"
+        ></option>
+      </select>
+      <label for="Horario">Horaio:</label>
+      <select
+        name="Horario"
+        placeholder="Horario"
+        required
+        [(ngModel)]="ingreso.horario.horario"
+      >
+        <option [ngValue]="null">Elije tu Horario</option>
+        <option *ngFor="let hora of horario" [ngValue]="hora"></option>
+      </select>
 
-      <input [routerLink]="'/Login'" type="submit"  value="Finalizar">
+      <label for="Turno">Turno</label>
+      <select name="turno" required [(ngModel)]="ingreso.turno.tipo_turno">
+        <option [ngValue]="null">Elije tu turno</option>
+        <option *ngFor="let turn of turno" [ngValue]="turn"></option>
+      </select>
+
+      <label for="Modalidad">Tipo de modadlidad:</label>
+      <select
+        name="modalidad"
+        placeholder="modalidad"
+        required
+        [(ngModel)]="ingreso.modalidad.tipo_modalidad"
+      >
+        <option [ngValue]="null">Elije tu Modalidad</option>
+        <option *ngFor="let moda of modalidad" value="moda"></option>
+      </select>
+
+      <h3>
+        Sube tu CV y tu Historial Academico en una link de Google Drive donde
+        haras una carpeta por cada uno y que en ambos esten en pdf tus archivos,
+        despues pega la ligas en cada campo donde los guardaste, recuerda poner
+        los link en publico
+      </h3>
+      <input
+        type="text"
+        name="cv"
+        placeholder="cv"
+        required
+        [(ngModel)]="ingreso.cv"
+      />
+      <input
+        type="HistorialAcademico"
+        name="Historialacademico"
+        placeholder="historialAcademico"
+        required
+        [(ngModel)]="ingreso.historial_Academico"
+      />
+
+      <button
+        role="button"
+        [routerLink]="'/Login'"
+        type="submit"
+        (click)="guardar()"
+        value="Finalizar"
+        *ngIf="!ingreso.id_ingreso; else elseBlock"
+      >
+        Finalizar
+      </button>
+      <ng-template #elseBlock>
+        <button role="button" (click)="editaringreso()">
+          <i class="material-icons">edit</i>
+          Editar informacion
+        </button>
+      </ng-template>
     </section>
   </main>
 </div>

@@ -1,6 +1,6 @@
 <div class="contenedor">
   <header>
-    <h1>Lista de Trámites</h1>
+    <h1>Datos de Ingreso</h1>
   </header>
   <main>
     <table>
@@ -17,6 +17,19 @@
       </tr>
       </thead>
       <tbody>
+        <tr *ngFor="let ingre of ingresos">
+          <td>{{ingre.id_ingreso}}</td>
+          <td>{{ingre.tramite.tipo_tramite}}</td>
+          <td>{{ingre.perfilamiento.nombre}}</td>
+          <td>{{ingre.turno.tipo_turno}}</td>
+          <td>{{ingre.modalidad.tipo_modalidad}}</td>
+          <td>{{ingre.cv}}</td>
+          <td>{{ingre.historial_Academico}}</td>
+          <td>
+            <button class="Eliminar" title="Eliminar" (click)='eliminarIngreso(ingre.id_ingreso)'><i class="material-icons">delete</i></button>
+            <button class="modificar" title="modificar"  [routerLink]="['/Datos-Ingresos/forms/', ingre.id_ingreso]"><i class="material-icons">edit</i></button>
+          </td>
+        </tr>
       <!-- Aquí van las filas con los datos -->
       </tbody>
     </table>

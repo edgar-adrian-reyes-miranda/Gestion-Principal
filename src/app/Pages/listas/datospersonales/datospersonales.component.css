@@ -1,7 +1,10 @@
 .contenedor {
-  width: 90%;
+  width: 100%;
+  max-width: 1200px; /* o ajusta según tu preferencia */
   margin: 20px auto;
+  overflow-x: hidden; /* para ocultar la barra de desplazamiento horizontal si es necesario */
 }
+
 
 header {
   background-color: #621132;
@@ -13,19 +16,24 @@ header {
 main {
   background-color: #D4C19C;
   padding: 20px;
+  margin-top: 0; /* Ajusta según sea necesario */
 }
+
 
 table {
   width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
+  table-layout: fixed;
+  margin-top: 0;
+  overflow-x: auto; /* Para permitir el desplazamiento horizontal si es necesario en dispositivos pequeños */
+  overflow-y: auto; /* Para permitir el desplazamiento vertical en dispositivos pequeños */
 }
 
 th, td {
-  padding: 10px;
-  text-align: left;
-  border-bottom: 1px solid #621132;
+  max-width: 290px; /* Limita el ancho de las celdas para evitar superposiciones */
+  word-wrap: break-word; /* Permite que las palabras largas se rompan y ajusten */
+  white-space: normal; /* Restablece la configuración de espacio en blanco */
 }
+
 
 th {
   background-color: #9D2449;
@@ -45,11 +53,32 @@ tbody tr:hover {
   background-color: #285C4D;
   color: #ffffff;
   border: none;
-  padding: 5px;
+  padding: 3px; /* Ajusta según sea necesario */
   cursor: pointer;
   margin-right: 5px;
 }
 
-.modificar:hover, .eliminar:hover {
-  background-color: #13322B;
+
+.modificar, .eliminar {
+  background-color: #285C4D;
+  color: #ffffff;
+  border: none;
+  padding: 3px; /* Ajusta según sea necesario */
+  cursor: pointer;
+  margin-right: 5px;
+  font-size: 0; /* Oculta el texto */
 }
+
+.modificar::before, .eliminar::before {
+  font-size: 16px; /* Ajusta según sea necesario */
+  content: '\1F589'; /* Icono de editar (puedes cambiarlo según tus necesidades) */
+  display: inline-block;
+}
+
+@media only screen and (max-width: 600px) {
+  .modificar, .eliminar {
+    font-size: 12px; /* Ajusta el tamaño del texto de los botones en dispositivos pequeños */
+    padding: 4px; /* Ajusta el relleno de los botones en dispositivos pequeños */
+  }
+}
+

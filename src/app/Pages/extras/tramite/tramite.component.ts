@@ -1,7 +1,7 @@
 import { TramiteService } from './../../../Services/tramite.service';
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import {  RouterLink } from '@angular/router';
 import { Tramite } from 'src/app/Clases/tramite';
 
 @Component({
@@ -12,7 +12,7 @@ import { Tramite } from 'src/app/Clases/tramite';
   styleUrl: './tramite.component.css'
 })
 export class TramiteComponent implements OnInit{
-Tramites:Tramite[]=[];
+Tramites: Tramite[]=[];
 
 constructor(private TramiteService:TramiteService){}
   ngOnInit(): void {
