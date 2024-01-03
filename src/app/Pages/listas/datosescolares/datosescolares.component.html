@@ -1,8 +1,9 @@
 <div class="contenedor">
   <header>
-    <h1>Lista de Estudiantes</h1>
+    <h1>Datos Escolares</h1>
   </header>
   <main>
+    <button [routerLink]="'/Datos-Ingresos'">Siguiente</button>
     <table>
       <thead>
       <tr>
@@ -18,21 +19,26 @@
       </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let escolar of Escolares">
-          <td>{{escolar.id_escolar}}</td>
-          <td>{{escolar.correo_inst}}</td>
-          <td>{{escolar.carrera}}</td>
-          <td>{{escolar.universidades.nombre}}</td>
-          <td>{{escolar.matricula}}</td>
-          <td>{{escolar.modalidadesesco.tipo_modalidad}}</td>
-          <td>{{escolar.planeducativo.nombre}}</td>
-          <td>{{escolar.periodo.tipo_periodo}}</td> 
+      <!-- escolares.component.html -->
+      <tr *ngFor="let escolar of Escolares">
+        <td>{{escolar.id_escolar}}</td>
+        <td>{{escolar.correo_inst}}</td>
+        <td>{{escolar.carrera}}</td>
+        <td>{{escolar.universidades?.nombre || 'N/A'}}</td>
+        <td>{{escolar.matricula}}</td>
+        <td>{{escolar.modalidadesesco?.tipo_modalidad || 'N/A'}}</td>
+        <td>{{escolar.planeducativo?.nombre || 'N/A'}}</td>
+        <td>{{escolar.periodo?.tipo_periodo || 'N/A'}}</td>
+        <td>
+          <button class="eliminar" title="Eliminar" (click)="eliminarEscolar(escolar.id_escolar)">
+            <i class="material-icons">delete</i>
+          </button>
+          <button class="modificar" title="Modificar" [routerLink]="['/Datos-escolares/forms/', escolar.id_escolar]">
+            <i class="material-icons">edit</i>
+          </button>
+        </td>
+      </tr>
 
-          <td>
-          <button class="eliminar" title="Eliminar" (click)="eliminarEscolar(escolar.id_escolar)"> <i class="material-icons">delete</i></button>
-          <button class="modificar" title="Modificar"  [routerLink]="['/Datos-escolares/forms/', escolar.id_escolar]"><i class="material-icons">edit</i></button>
-            </td>         
-        </tr>
       </tbody>
     </table>
   </main>

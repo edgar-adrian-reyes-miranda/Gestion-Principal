@@ -18,7 +18,7 @@ export class DatospersonalesComponent implements OnInit {
   constructor(
     private PersonapiService: PersonapiService,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.PersonapiService.getperson().subscribe(
@@ -27,38 +27,40 @@ export class DatospersonalesComponent implements OnInit {
         this.personal = data;
       },
       (error) => console.error('Error al obtener datos personales', error),
-      () => console.log('Obtencion de personales completo')
+      () => console.log('Obtención de personales completada')
     );
   }
 
   eliminarpersonal(id: number | undefined) {
-    if (typeof id === 'number') {
+    if (id) {
       this.PersonapiService.eliminarPersonales(id).subscribe(
         (res) => {
-          console.log('Dato personal eliiminado exitoso');
+          console.log('Dato personal eliminado exitoso');
           this.actualizarListaPersonal();
         },
-        (error) => console.error('error al eliminar al dato personal', error)
+        (error) => console.error('Error al eliminar el dato personal', error)
       );
     } else {
-      console.error('ID de personal no valido', id);
+      console.error('ID de personal no válido', id);
     }
   }
+
   private actualizarListaPersonal() {
     this.PersonapiService.getperson().subscribe(
       (data: Personales[]) => {
         console.log('Datos de personales actualizados', data);
+        this.personal = data;
       },
-      (error) => console.error('Error al obtener el dato personal', error),
-      () => console.error('Actualizacion de dato personales completo')
+      (error) => console.error('Error al obtener los datos personales', error),
+      () => console.log('Actualización de datos personales completada')
     );
   }
 
   editarpersonal(id_person: number | undefined) {
-    if (id_person !== undefined) {
+    if (id_person) {
       this.router.navigate(['/Datos-personales/forms/', id_person]);
     } else {
-      console.error('ID  de personal no valido', id_person);
+      console.error('ID de personal no válido', id_person);
     }
   }
 }

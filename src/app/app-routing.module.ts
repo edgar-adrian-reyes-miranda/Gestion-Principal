@@ -39,6 +39,8 @@ import { NuevoGrupoComponent } from './Formulario/nuevo-grupo/nuevo-grupo.compon
 import { NuevoPerfilamientoComponent } from './Formulario/nuevo-perfilamiento/nuevo-perfilamiento.component';
 import { TramiteComponent } from './Pages/extras/tramite/tramite.component';
 import { BorradosComponent } from './Pages/borrados/borrados.component';
+import {NuevoTramiteComponent} from "./Formulario/nuevo-tramite/nuevo-tramite.component";
+import {EscolarComponent} from "./Pages/extras/escolar/escolar.component";
 
 
 
@@ -69,14 +71,16 @@ const routes: Routes = [
   {path:'Nuevo-grupo/forms/:id_grupo', component:NuevoGrupoComponent, pathMatch:'full'},
   {path:'Nuevo-perfil', component:NuevoPerfilamientoComponent, pathMatch:'full'},
   {path:'Nuevo-perfil/forms/:id_perfilamiento', component:NuevoPerfilamientoComponent, pathMatch:'full'},
-  
+  {path:'Nuevo-Tramite', component:NuevoTramiteComponent, pathMatch:'full'},
+  {path:'Nuevo-Tramite/forms/:id_tramite', component:NuevoTramiteComponent, pathMatch:'full'},
+
   /*Listas*/
   {path:'lista-personales',component:DatospersonalesComponent,pathMatch:'full'},
   {path:'lista-escolares',component:DatosescolaresComponent,pathMatch:'full'},
   {path:'lista-ingresos',component:DatosingresosComponent,pathMatch:'full'},
   {path:'lista-ftd',component:DatosftdComponent,pathMatch:'full'},
-  
-  
+
+
   /*extras*/
   {path:'Universidades', component:UniversidadesComponent,pathMatch:'full'},
   {path:'Planes-Educativos',component:PlanesEducativosComponent, pathMatch:'full'},
@@ -86,6 +90,7 @@ const routes: Routes = [
   {path:'tutor',component:TutoresComponent,pathMatch:'full'},
   {path:'Periodo',component:PeriodoComponent,pathMatch:'full'},
   {path:'Tramite',component:TramiteComponent, pathMatch:'full'},
+  {path:'Escolar', component:EscolarComponent, pathMatch:'full'},
 
   /*Reportes*/
   {path:'Excel', component:ExcelComponent, pathMatch:'full'},
@@ -103,7 +108,7 @@ const routes: Routes = [
 
   /*informacion*/
   {path:'informacion', component:InformacionComponent,pathMatch:'full'},
-  
+
   /*Usuario*/
   {path:'Usuario',component:LoginComponent,pathMatch:'full'},
 
@@ -113,7 +118,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), HttpClientModule, 
+  imports: [RouterModule.forRoot(routes), HttpClientModule,
     CommonModule, BrowserModule,FormsModule,ReactiveFormsModule,],
   exports: [RouterModule]
 })

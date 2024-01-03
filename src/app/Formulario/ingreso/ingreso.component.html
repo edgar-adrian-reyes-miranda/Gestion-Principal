@@ -1,88 +1,97 @@
+<!--suppress XmlInvalidId -->
 <div class="contenedor">
   <header>
-    <h1>Registro de Información de Tramite</h1>
+    <h1>Registro de Información de Ingreso</h1>
   </header>
   <main>
     <section class="formulario">
       <h2><i class="material-icons"></i> Información</h2>
-      <label for="Tramite">Tramite a realizar:</label>
+      <label for="Tramite">Trámite a realizar:</label>
       <select
         name="Tramite"
-        placeholder="Tramites"
+        placeholder="Trámites"
         required
         [(ngModel)]="ingreso.tramite.tipo_tramite"
       >
-        <option [ngValue]="null">Elije tu Tipo tramite</option>
+        <option [ngValue]="null">Elige tu Tipo de trámite</option>
         <option *ngFor="let tramite of Tramites" [ngValue]="tramite">
           {{ tramite.tipo_tramite }}
         </option>
       </select>
-      <label for="Perfilameinto">Perfilamiento</label>
+
+      <label for="Perfilamiento">Perfilamiento:</label>
       <select
         name="perfilamiento"
         required
         [(ngModel)]="ingreso.perfilamiento.nombre"
       >
-        <option [ngValue]="null"></option>
+        <option [ngValue]="null">Elige tu Perfilamiento</option>
         <option
-          *ngFor="let perfil of Perfilamiento"
-          [ngValue]="perfil"
-        ></option>
+          *ngFor="let perfil of Perfilamiento" [ngValue]="perfil">
+          {{ perfil.nombre }}
+        </option>
       </select>
-      <label for="Horario">Horaio:</label>
+
+      <label for="Horario">Horario:</label>
       <select
         name="Horario"
         placeholder="Horario"
         required
-        [(ngModel)]="ingreso.horario.horario"
-      >
-        <option [ngValue]="null">Elije tu Horario</option>
-        <option *ngFor="let hora of horario" [ngValue]="hora"></option>
+        [(ngModel)]="ingreso.horario.horario">
+        <option [ngValue]="null">Elige tu Horario</option>
+        <option *ngFor="let hora of horario" [ngValue]="hora">
+          {{ hora.horario }}
+        </option>
       </select>
 
-      <label for="Turno">Turno</label>
-      <select name="turno" required [(ngModel)]="ingreso.turno.tipo_turno">
-        <option [ngValue]="null">Elije tu turno</option>
-        <option *ngFor="let turn of turno" [ngValue]="turn"></option>
+      <label for="Turno">Turno:</label>
+      <select name="turno"
+              placeholder="Turno"
+              required
+              [(ngModel)]="ingreso.turno.tipo_turno">
+        <option [ngValue]="null">Elige tu Turno</option>
+        <option *ngFor="let turn of turno" [ngValue]="turn">
+          {{ turn.tipo_turno }}
+        </option>
       </select>
 
-      <label for="Modalidad">Tipo de modadlidad:</label>
+      <label for="Modalidad">Tipo de modalidad:</label>
       <select
         name="modalidad"
         placeholder="modalidad"
         required
-        [(ngModel)]="ingreso.modalidad.tipo_modalidad"
-      >
-        <option [ngValue]="null">Elije tu Modalidad</option>
-        <option *ngFor="let moda of modalidad" value="moda"></option>
+        [(ngModel)]="ingreso.modalidad.tipo_modalidad">
+        <option [ngValue]="null">Elige tu Modalidad</option>
+        <option *ngFor="let moda of modalidad" [ngValue]="moda">
+          {{ moda.tipo_modalidad }}
+        </option>
       </select>
 
       <h3>
-        Sube tu CV y tu Historial Academico en una link de Google Drive donde
-        haras una carpeta por cada uno y que en ambos esten en pdf tus archivos,
-        despues pega la ligas en cada campo donde los guardaste, recuerda poner
-        los link en publico
+        Sube tu CV y tu Historial Académico en un enlace de Google Drive, donde
+        harás una carpeta por cada uno y que en ambos estén en formato PDF, después pega los enlaces en cada campo donde los guardaste, recuerda poner los enlaces en público.
       </h3>
       <input
         type="text"
         name="cv"
-        placeholder="cv"
+        placeholder="Enlace de CV"
         required
         [(ngModel)]="ingreso.cv"
       />
       <input
-        type="HistorialAcademico"
-        name="Historialacademico"
-        placeholder="historialAcademico"
+        type="text"
+        name="historialAcademico"
+        placeholder="Enlace de Historial Académico"
         required
         [(ngModel)]="ingreso.historial_Academico"
       />
 
       <button
+      id="guardar"
         role="button"
         [routerLink]="'/Login'"
         type="submit"
-        (click)="guardar()"
+        (click)='guardar()'
         value="Finalizar"
         *ngIf="!ingreso.id_ingreso; else elseBlock"
       >
@@ -91,7 +100,7 @@
       <ng-template #elseBlock>
         <button role="button" (click)="editaringreso()">
           <i class="material-icons">edit</i>
-          Editar informacion
+          Editar información
         </button>
       </ng-template>
     </section>

@@ -16,35 +16,43 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 export class PersonalesComponent implements OnInit {
   person: Personales = new Personales();
 
-  constructor(private personapi: PersonapiService, private router: Router, private activedroute: ActivatedRoute) { }
+  constructor(private personapi: PersonapiService,
+              private router: Router,
+              private activedroute: ActivatedRoute) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.cargarpersonales();
   }
 
   cargarpersonales() {
-    this.activedroute.params.subscribe(params => {
-      let id = params['id_person']
+    this.activedroute.params.subscribe((params) => {
+      let id = params['id_person'];
       if (id) {
-        this.personapi.getPersonales(id).subscribe((person) => this.person = person)
+        this.personapi.getPersonales(id).subscribe(
+          (person) => this.person = person,
+          (error) => console.error('Error al cargar personales', error)
+        );
       }
-    })
+    });
   }
 
-  guardar(): void {
-    this.personapi.guardarPersonales(this.person)
-      .subscribe(personales => {
-        this.router.navigate(['/lista-personales'])
-        console.log('Nuevo datos persoanels', 'Nuevo ${this.person.nombre}craado con exito ')
-      });
+  guardar() {
+    this.personapi.guardarPersonales(this.person).subscribe(
+      (personales) => {
+        this.router.navigate(['/lista-personales']);
+        console.log('Nuevo dato personales', `Nuevo ${this.person.nombre} creado con éxito`);
+      },
+      (error) => console.error('Error al actualizar', error)
+    );
   }
 
-  editarPersonaes(): void {
+  editarPersonaes() {
     this.personapi.modificarPersonales(this.person).subscribe(
-      personales => {
-        this.router.navigate(['/lista-personales'])
-        console.log('Personales actualizados', 'Personales ${this.person.nombre} actualizados con exito')
-      }, error => 'Error en actualizar');
-
+      (personales) => {
+        this.router.navigate(['/lista-personales']);
+        console.log('Personales actualizados', `Personales ${this.person.nombre} actualizados con éxito`);
+      },
+      (error) => console.error('Error en actualizar', error)
+    );
   }
 }

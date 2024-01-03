@@ -10,6 +10,6 @@ export class Personales {
   genero:string="";
   curp:string="";
   direccion:string="";
-  estados?:string;
-  municipio?:string;
+  estados:string="";
+  municipio:string="";
 }

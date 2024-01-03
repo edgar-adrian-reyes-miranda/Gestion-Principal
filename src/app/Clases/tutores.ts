@@ -1,4 +1,4 @@
 export class Tutores{
-  id_tutor:number=0;
+  id_tutor?:number;
   nombre:string="";
 }

@@ -1,4 +1,4 @@
 export class Turno {
   id_turno?:number;
-  tipo_turno?:string;
+  tipo_turno:string="";
 }

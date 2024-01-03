@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat-Medium';
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #56242A; /* Marrón rojizo */
   color: #D4C19C; /* Beige */
 }
@@ -9,10 +9,6 @@ body {
 .contenedor {
   max-width: 800px;
   margin: 50px auto;
-  background-color: #9D2449; /* Rojo más claro */
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 header {
@@ -21,7 +17,7 @@ header {
 }
 
 h1 {
-  color: #D4C19C; /* Azul claro */
+  color: #D4C19C; /* Beige */
 }
 
 main {
@@ -34,10 +30,15 @@ main {
 }
 
 h2 {
-  border-bottom: 2px solid #D4C19C; /* Azul claro */
+  border-bottom: 2px solid #13322B; /* Verde oscuro */
   padding-bottom: 5px;
   margin-top: 20px;
-  color: #B38E5D; /* Azul claro */
+  color: #13322B; /* Verde oscuro */
+}
+
+label {
+  margin-top: 10px;
+  color: #13322B; /* Verde oscuro */
 }
 
 select,
@@ -47,20 +48,22 @@ input[type="text"] {
   padding: 10px;
   margin: 8px 0;
   box-sizing: border-box;
-  border: 1px solid #4E232E; /* Azul claro */
+  border: 1px solid #13322B; /* Verde oscuro */
   border-radius: 4px;
-  background-color: #13322B; /* Verde oscuro */
-  color: #D4C19C; /* Beige */
-}
-
-input[type="submit"] {
-  background-color: #13322B; /* Verde oscuro */
-  color: #D4C19C; /* Beige */
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-input[type="submit"]:hover {
   background-color: #285C4D; /* Verde más claro */
   color: #D4C19C; /* Beige */
+}
+
+button {
+  background-color: #13322B; /* Verde oscuro */
+  color: #D4C19C; /* Beige */
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #285C4D; /* Verde más claro */
 }

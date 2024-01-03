@@ -14,9 +14,12 @@ export class IngresoapiService {
   getIngresos() {
     return this.http.get<Ingresos[]>(`${baseurl}ingresos/lista`);
   }
+  getIngresosporid(id_ingreso:number) {
+    return this.http.get<Ingresos>(`${baseurl}ingresos/${id_ingreso}`);
+  }
 
-  guardarIngresos(Ingresos: Ingresos) {
-    return this.http.post<Ingresos>(`${baseurl}ingresos/guardar`, Ingresos);
+  guardarIngresos(ingresos: Ingresos) {
+    return this.http.post(`${baseurl}ingresos/guardar`,ingresos);
   }
 
   modificarIngresos(Ingresos: Ingresos): Observable<Ingresos> {

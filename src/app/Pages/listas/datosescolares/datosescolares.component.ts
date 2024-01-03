@@ -4,6 +4,7 @@ import {Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {Universidad} from "../../../Clases/universidad";
 
 
 @Component({
@@ -15,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 })
 export class DatosescolaresComponent implements OnInit{
   Escolares:Escolares[]=[];
+  universidades:Universidad[]=[];
 
   constructor(private EscolarnapiService:EscolarnapiService, private router:Router){}
 
@@ -28,7 +30,7 @@ export class DatosescolaresComponent implements OnInit{
       ()=>console.log('Obtencion de escoalres completo')
     );
   }
-  
+
   eliminarEscolar(id:number | undefined){
     if(typeof id ==='number'){
       this.EscolarnapiService.eliminarEscolares(id).subscribe(
@@ -36,19 +38,19 @@ export class DatosescolaresComponent implements OnInit{
           console.log('Dato escolar eliminado exitoso');
           this.actualizarEscolar();
         },
-        error=> 
+        error=>
         console.error('errorr al eliminar el dato escolar', error)
       );
-          }else{
+    }else{
             console.error('ID de escolar no valido', id);
-          }
+    }
   }
    private actualizarEscolar(){
     this.EscolarnapiService.getEscolares().subscribe(
       (data:Escolares[])=>{
         console.log('Datos escolares actualizados', data);
       },
-      error=> console.error('Error al obtener el dato escolar', error),
+      (error)=> console.error('Error al obtener el dato escolar', error),
       ()=> console.error('Actualizacion de dato escolar completo')
     );
   }

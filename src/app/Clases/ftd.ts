@@ -2,7 +2,7 @@
 import { Date } from '@angular/core';
 
 export class Ftd {
-  id_ftd: number=0;
+  id_ftd?: number;
   area: string="";
   tutor: string="";
   fecha_inicio: Date;

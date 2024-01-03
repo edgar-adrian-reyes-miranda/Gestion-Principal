@@ -1,4 +1,4 @@
 export class Grupos {
-  id_grupo?:number=0;
+  id_grupo?:number;
   nombre:string="";
 }

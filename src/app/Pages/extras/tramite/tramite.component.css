@@ -1,80 +1,84 @@
 .contenedor {
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    margin: 20px auto;
-  }
-  
-  header {
-    background-color: #621132;
-    color: #ffffff;
-    padding: 10px;
-  }
-  
-  h1 {
-    font-size: 2em;
-  }
-  
-  main {
-    background-color: #B38E5D;
-    padding: 20px;
-  }
-  
-  .acciones-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  button.agregar-tutor {
-    background-color: #13322B;
-    color: #ffffff;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  input[type="text"] {
-    width: 200px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  th, td {
-    border: 1px solid #13322B;
-    padding: 10px;
-    text-align: left;
-  }
-  
-  th {
-    background-color: #9D2449;
-    color: #ffffff;
-  }
-  
-  td {
-    background-color: #13322B;
-    color: #ffffff;
-  }
-  
-  button.modificar, button.eliminar {
-    background-color: #285C4D;
-    color: #ffffff;
-    padding: 8px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 5px;
-  }
-  
-  button.modificar:hover, button.eliminar:hover {
-    background-color: #4E232E;
-  }
-  
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  background-color: #56242A;
+  color: #B38E5D;
+  padding: 10px;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+main {
+  background-color: #9D2449;
+  padding: 20px;
+}
+
+button {
+  background-color: #13322B;
+  color: #D4C19C;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #285C4D;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #4E232E;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #56242A;
+  color: #B38E5D;
+}
+
+tbody tr:hover {
+  background-color: #285C4D;
+}
+
+.router-link-active {
+  background-color: #13322B;
+}
+
+.acciones-bar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.modificar, .eliminar {
+  background-color: #4E232E;
+  color: #D4C19C;
+  border: none;
+  border-radius: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.modificar:hover, .eliminar:hover {
+  background-color: #621132;
+}
+
+.material-icons {
+  vertical-align: middle;
+}
+

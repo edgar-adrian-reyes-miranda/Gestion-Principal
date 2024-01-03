@@ -3,6 +3,7 @@
       <h1>Lista de Tramites</h1>
     </header>
     <main>
+      <button id="nuevotramite" [routerLink]="'/Nuevo-Tramite'"  >Crear Tramite</button>
       <div class="acciones-bar">
       </div>
       <table>
@@ -10,13 +11,17 @@
         <tr>
           <th>ID</th>
           <th>Tipo Tramite</th>
-          
+
         </tr>
         </thead>
         <tbody>
         <tr *ngFor="let tramite of Tramites">
           <td>{{tramite.id_tramite}}</td>
           <td>{{tramite.tipo_tramite}}</td>
+          <td>
+            <button class="modificar" title="Modificar" [routerLink]="['/Nuevo-Tramite/forms', tramite.id_tramite]"><i class="material-icons">edit</i></button>
+            <button class="eliminar" title="Eliminar" (click)="eliminarTramite(tramite.id_tramite)"><i class="material-icons">delete</i></button>
+          </td>
           </tr>
         </tbody>
       </table>

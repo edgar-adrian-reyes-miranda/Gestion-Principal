@@ -1,5 +1,5 @@
 export class Admins {
-  id_:number=0;
+  id_admin?:number;
   username:string="";
   password:string="";
   correo:string="";

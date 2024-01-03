@@ -1,3 +1,4 @@
+<!--suppress XmlInvalidId -->
 <div class="contenedor">
   <header>
     <h1>Registro de Información Escolar</h1>
@@ -22,16 +23,15 @@
       <label for="Universidad">Universidad:</label>
       <select
         name="Universidad"
-        placeholder="Universidades"
         required
         [(ngModel)]="escolar.universidades.nombre"
       >
-        <option [ngValue]="null">Elije una Universidad</option>
+        <option value="" disabled selected>Elije una Universidad</option>
         <option
           *ngFor="let universidad of universidades"
           [ngValue]="universidad"
         >
-          {{ universidad.nombre }}
+          {{ universidad?.nombre }}
         </option>
       </select>
       <input
@@ -42,58 +42,53 @@
         [(ngModel)]="escolar.matricula"
       />
 
-      <label for="Plan Educativo">Plan Educativo:</label>
+      <label for="Plan de Estudios">Plan Educativo:</label>
       <select
         name="Plan Educativo"
         required
         [(ngModel)]="escolar.planeducativo.nombre"
       >
-        <option [ngValue]="null">Elije tu Plan de estudios</option>
+        <option value="" disabled selected>Elije tu Plan de estudios</option>
         <option *ngFor="let plan of planes" [ngValue]="plan">
-          {{ plan.nombre }}
+          {{ plan?.nombre }}
         </option>
       </select>
 
-      <label for="Periodo">Perido:</label>
+      <label for="Periodo">Período:</label>
       <select
         name="Periodo"
-        placeholder="Periodo"
         required
         [(ngModel)]="escolar.periodo.tipo_periodo"
       >
-        <option [ngValue]="null">Elije tu periodo</option>
+        <option value="" disabled selected>Elije tu período</option>
         <option *ngFor="let periodo of periodos" [ngValue]="periodo">
-          {{ periodo.tipo_periodo }}
+          {{ periodo?.tipo_periodo }}
         </option>
       </select>
 
       <label for="ModalidadesEscolares">Modalidades Escolar:</label>
       <select
         name="ModalidadEscolar"
-        placeholder="Modalidades"
         required
-        [(ngModel)]="escolar.modalidadesesco.tipo_modalidad"
-      >
-        <option [ngValue]="null">Elije tu modalidad escolar</option>
-        <option
-          *ngFor="let esco of modalidadesEsc"
-          [ngValue]="esco.tipo_modalidad"
-        >
-          {{ esco.tipo_modalidad }}
+        [(ngModel)]="escolar.modalidadesesco.tipo_modalidad ">
+        <option value="" disabled selected>Elije tu modalidad escolar</option>
+        <option *ngFor="let escolaridad of modalidadesEsc" [ngValue]="escolaridad">
+          {{ escolaridad?.tipo_modalidad }}
         </option>
       </select>
 
       <button
+        id="guardar"
         role="button"
         [routerLink]="'/Datos-Ingresos'"
         (click)='guardar()'
         *ngIf="!escolar.id_escolar; else elseBlock"
         type="submit"
-        value="Siguiente"
       >
         Siguiente
       </button>
       <ng-template #elseBlock>
+        id="editar"
         <button role="button" (click)="editarescolar()">
           <i class="material-icons">edit</i>Editar Información
         </button>

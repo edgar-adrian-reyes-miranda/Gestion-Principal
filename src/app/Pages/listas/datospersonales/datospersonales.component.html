@@ -3,6 +3,7 @@
     <h1>Datos Personales</h1>
   </header>
   <main>
+    <button [routerLink]="'/Datos-escolares'">Siguiente</button>
     <table>
       <thead>
       <tr>
@@ -20,7 +21,7 @@
         <th>Teléfono</th>
         <th>Teléfono de Casa</th>
         <th>Acciones</th>
-       
+
       </tr>
       </thead>
       <tbody>
@@ -38,7 +39,7 @@
       <td>{{person.genero}}</td>
       <td>{{person.telefono}}</td>
       <td>{{person.telefono_casa}}</td>
-      
+
       <td>
       <button class="eliminar" title="Eliminar" (click)="eliminarpersonal(person.id_person)"> <i class="material-icons">delete</i></button>
         <button class="modificar" title="Modificar"  [routerLink]="['/Datos-personales/forms/',person.id_person]"><i class="material-icons">edit</i></button>

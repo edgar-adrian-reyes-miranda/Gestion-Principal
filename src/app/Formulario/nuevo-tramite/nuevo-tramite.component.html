@@ -1,1 +1,14 @@
-<p>nuevo-tramite works!</p>
+<!-- universidades.component.html -->
+<div class="register-container">
+  <h2>Perfilamiento</h2>
+  <form>
+    <label for="nombre">Nombre de perfil:</label>
+    <input type="text" id="nombre" name="nombre"  required [(ngModel)]="tramite.tipo_tramite">
+    <div>
+      <button  role="button" (click) = 'guardar()' *ngIf="!tramite.id_tramite  else elseBlock">Agregar</button>
+      <ng-template #elseBlock>
+        <button role="button" (click) = 'editartramite()' >Actualizar</button>
+      </ng-template>
+    </div>
+  </form>
+</div>

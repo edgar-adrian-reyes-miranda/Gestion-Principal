@@ -8,7 +8,7 @@ import { Observable } from 'rxjs/internal/Observable';
   providedIn: 'root'
 })
 export class TramiteService {
-  
+
   constructor(private http:HttpClient) { }
 
   listatramite(){
@@ -16,6 +16,10 @@ export class TramiteService {
   }
   gettramiteporid(id_tramite:number){
     return this.http.get<Tramite>(`${baseurl}tramite/${id_tramite}`);
+  }
+
+  guardarTramite(Tramite:Tramite){
+    return this.http.post<Tramite>(`${baseurl}tramite/guardar`, Tramite);
   }
 
   modificarTramite(Tramite:Tramite): Observable<Tramite> {

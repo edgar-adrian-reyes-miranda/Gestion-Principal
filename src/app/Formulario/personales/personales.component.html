@@ -15,14 +15,14 @@
         />
         <input
           type="text"
-          name="Primer Apellido"
+          name="p_apellido"
           placeholder="Primer Apellido"
           required
           [(ngModel)]="person.p_apellido"
         />
         <input
           type="text"
-          name="Segundo Apellido"
+          name="s_apellido"
           placeholder="Segundo Apellido"
           required
           [(ngModel)]="person.s_apellido"
@@ -38,6 +38,13 @@
         />
         <input
           type="text"
+          name="edad"
+          placeholder="Edad"
+          required
+          [(ngModel)]="person.edad"
+        />
+        <input
+          type="text"
           name="curp"
           placeholder="CURP"
           required
@@ -45,21 +52,21 @@
         />
         <input
           type="text"
-          name="estado"
+          name="estados"
           placeholder="Estados"
           required
           [(ngModel)]="person.estados"
         />
         <input
           type="text"
-          name="ciudad o municipio"
+          name="municipio"
           placeholder="Ciudad o Municipio"
           required
           [(ngModel)]="person.municipio"
         />
         <input
           type="text"
-          name="Domicilio"
+          name="direccion"
           placeholder="Domicilio"
           required
           [(ngModel)]="person.direccion"
@@ -75,7 +82,7 @@
         />
         <input
           type="email"
-          name="correoPersonal"
+          name="correo"
           placeholder="Correo"
           required
           [(ngModel)]="person.correo"
@@ -89,7 +96,7 @@
         />
 
         <button
-          [routerLink]="'/Datos-Ingresos'"
+          [routerLink]="'/lista-personales'"
           role="button"
           (click)="guardar()"
           *ngIf="!person.id_person; else elseBlock"

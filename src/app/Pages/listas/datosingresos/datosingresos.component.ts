@@ -18,7 +18,7 @@ export class DatosingresosComponent implements OnInit {
   constructor(
     private IngresoapiService: IngresoapiService,
     private route: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.IngresoapiService.getIngresos().subscribe(
@@ -27,38 +27,40 @@ export class DatosingresosComponent implements OnInit {
         this.ingresos = data;
       },
       (error) => console.error('Error al obtener los datos de ingresos', error),
-      () => console.log('Obtencion de datos de ingreso completo')
+      () => console.log('Obtención de datos de ingreso completada')
     );
   }
 
   eliminarIngreso(id: number | undefined) {
-    if (typeof id === 'number') {
+    if (id) {
       this.IngresoapiService.eliminarIngresos(id).subscribe(
         (res) => {
-          console.log('Dato de ingreso eliminado con exito');
+          console.log('Dato de ingreso eliminado con éxito');
           this.actualizarListaIngreso();
         },
-        (error) => console.error('Error al eliminar al dato personal', error)
+        (error) => console.error('Error al eliminar el dato de ingreso', error)
       );
     } else {
-      console.error('ID de ingreso no valido', id);
+      console.error('ID de ingreso no válido', id);
     }
   }
+
   private actualizarListaIngreso() {
     this.IngresoapiService.getIngresos().subscribe(
-      (Data: Ingresos[]) => {
-        console.log('Datos de ingreso actualizados', Data);
+      (data: Ingresos[]) => {
+        console.log('Datos de ingreso actualizados', data);
+        this.ingresos = data;
       },
-      (error) => console.error('Error al obtener el dato de ingreso', error),
-      () => console.error('Actualizacion de datos de ingreso completo')
+      (error) => console.error('Error al obtener los datos de ingreso', error),
+      () => console.log('Actualización de datos de ingreso completada')
     );
   }
 
   editarIngreso(id_ingreso: number | undefined) {
-    if (id_ingreso !== undefined) {
+    if (id_ingreso) {
       this.route.navigate(['/Login']);
     } else {
-      console.error('ID de ingreso no valido', id_ingreso);
+      console.error('ID de ingreso no válido', id_ingreso);
     }
   }
 }

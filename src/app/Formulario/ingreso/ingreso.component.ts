@@ -40,35 +40,46 @@ export class IngresoComponent implements OnInit {
 
   ngOnInit(): void {
     this.cargarIngresos();
-    this.TramiteService.listatramite().subscribe((tramites) => this.Tramites = tramites);
-    this.PerflapiService.getPerfilamiento().subscribe((perfilamiento) => this.Perfilamiento = perfilamiento);
-    this.HorapiService.getHorario().subscribe((horario) => this.horario = horario);
-    this.ModapiService.getModalidades().subscribe((modalidad) => this.modalidad = modalidad);
-    this.TurnapiService.getturnos().subscribe((TURNO) => this.turno = TURNO);
+    this.TramiteService.listatramite().subscribe(tramites => this.Tramites = tramites);
+    this.PerflapiService.getPerfilamiento().subscribe(perfilamiento => this.Perfilamiento = perfilamiento);
+    this.HorapiService.getHorario().subscribe(horario => this.horario = horario);
+    this.ModapiService.getModalidades().subscribe(modalidad => this.modalidad = modalidad);
+    this.TurnapiService.getturnos().subscribe(TURNO => this.turno = TURNO);
 
   }
+
   cargarIngresos() {
-    this.activedrouter.params.subscribe(params => {
-      let id = params['id:ingreso']
+    this.activedrouter.params.subscribe((params) => {
+      let id = params['id_ingreso']
       if (id) {
-        this.IngresoapiService.getIngresos().subscribe((tramite) => this.ingreso = this.ingreso);
+        this.IngresoapiService.getIngresosporid(id).subscribe(
+          (ingreso) => (this.ingreso = ingreso),
+          (error) => console.error('Error al cargar los ingresos', error)
+        );
       }
-    })
+    });
   }
+
   editaringreso() {
     this.IngresoapiService.modificarIngresos(this.ingreso).subscribe(
       ingresos => {
-        this.route.navigate(['/lista-ingresos'])
-        console.log('Ingresos actualizados', 'Ingresos ${this.ingreso.cv}actualizado con exito')
-      }, error => 'Error en actualizar');
+        this.route.navigate(['/lista-ingresos']);
+        console.log('Ingresos actualizados', `Ingresos ${this.ingreso.cv} actualizado con éxito`);
+      },
+      error => console.error('Error en actualizar', error)
+    );
   }
 
   guardar() {
     this.IngresoapiService.guardarIngresos(this.ingreso).subscribe(
-      ingresos => {
-        this.route.navigate(['/lista-ingresps'])
-        console.log('Nuevo ingreso', 'Nuevo ${this.ingreso.cv} guardados con exito')
-      });
+      (ingresos) => {
+        this.route.navigate(['/lista-ingresos']);
+        console.log('Nuevo ingreso',
+        `Nuevo ${this.ingreso.cv} guardado con éxito`);
+      },
+      (error) => console.error('Error al actualizar', error)
+    );
   }
+
 
 }

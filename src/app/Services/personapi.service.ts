@@ -17,8 +17,8 @@ export class PersonapiService {
     return this.http.get<Personales>(`${baseurl}personales/${id_person}`);
   }
 
-  guardarPersonales(Personales: Personales): Observable<Personales> {
-    return this.http.post<Personales>(`${baseurl}personales/guardar`, Personales);
+  guardarPersonales(personales: Personales) {
+    return this.http.post(`${baseurl}personales/guardar`, personales);
   }
 
   modificarPersonales(Personales: Personales): Observable<Personales> {

@@ -1,4 +1,4 @@
 export class Planesedu {
-  id_plan:number=0;
+  id_plan?:number;
   nombre:string="";
 }

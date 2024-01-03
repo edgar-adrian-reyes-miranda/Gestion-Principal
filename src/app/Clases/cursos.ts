@@ -1,4 +1,4 @@
 export class Cursos {
-  id_curso:number=0;
+  id_curso?:number;
   nombre:string="";
 }
