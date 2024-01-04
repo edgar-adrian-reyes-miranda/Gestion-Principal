@@ -9,7 +9,7 @@ export class Escolares {
   matricula:string="";
   carrera:string="";
   universidades:Universidad= new Universidad();
-  modalidadesesco:ModEscolares= new ModEscolares();
+  modalidadesesco:ModEscolares= new  ModEscolares();
   planeducativo:Planesedu= new Planesedu();
-  periodo:Periodo= new Periodo();
+  periodo:Periodo=new Periodo();
 }

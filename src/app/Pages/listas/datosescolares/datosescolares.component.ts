@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {Universidad} from "../../../Clases/universidad";
+import { Periodo } from 'src/app/Clases/periodo';
 
 
 @Component({
@@ -16,8 +17,8 @@ import {Universidad} from "../../../Clases/universidad";
 })
 export class DatosescolaresComponent implements OnInit{
   Escolares:Escolares[]=[];
-  universidades:Universidad[]=[];
-
+  universidades: Universidad[] = [];
+  
   constructor(private EscolarnapiService:EscolarnapiService, private router:Router){}
 
   ngOnInit(): void {

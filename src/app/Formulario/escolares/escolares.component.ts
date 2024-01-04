@@ -50,11 +50,12 @@ export class EscolaresComponent implements OnInit {
     { console.log('Periodos', Periodo);
       (this.periodos = Periodo)
   });
-    this.ModEscapiService.getMoEscoalrMap().subscribe((ModalidadEscolar) => {
-      console.log('Modalidades Escolares', ModalidadEscolar);
-      this.modalidadesEsc = ModalidadEscolar;
+    this.ModEscapiService.getModEscolar().subscribe((ModalidaEsc) => {
+      console.log('Modalidades', ModalidaEsc);
+      (this.modalidadesEsc = ModalidaEsc)
     });
   }
+
   cargarescolar() {
 
     this.actived.params.subscribe((params) => {
@@ -83,6 +84,7 @@ export class EscolaresComponent implements OnInit {
   guardar() {
     this.EscolarnapiService.guardarEscolares(this.escolar).subscribe(
       (escolares) => {
+        this.PerioapiService.setPeriodoSeleccionado(this.escolar.periodo);
         this.route.navigate(['/lista-escolares']);
         console.log(
           'Nuevo datos escolares',
@@ -92,5 +94,6 @@ export class EscolaresComponent implements OnInit {
       (error) => console.error('Error al actualizar', error)
     );
   }
+
 
 }

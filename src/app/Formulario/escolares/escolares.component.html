@@ -70,9 +70,13 @@
       <select
         name="ModalidadEscolar"
         required
-        [(ngModel)]="escolar.modalidadesesco.tipo_modalidad ">
+        [(ngModel)]="escolar.modalidadesesco.tipo_modalidad"
+      >
         <option value="" disabled selected>Elije tu modalidad escolar</option>
-        <option *ngFor="let escolaridad of modalidadesEsc" [ngValue]="escolaridad">
+        <option
+          [ngValue]="escolaridad"
+          *ngFor="let escolaridad of modalidadesEsc"
+        >
           {{ escolaridad?.tipo_modalidad }}
         </option>
       </select>
@@ -81,7 +85,7 @@
         id="guardar"
         role="button"
         [routerLink]="'/Datos-Ingresos'"
-        (click)='guardar()'
+        (click)="guardar()"
         *ngIf="!escolar.id_escolar; else elseBlock"
         type="submit"
       >

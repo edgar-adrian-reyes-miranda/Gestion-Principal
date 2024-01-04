@@ -19,7 +19,7 @@ export class IngresoapiService {
   }
 
   guardarIngresos(ingresos: Ingresos) {
-    return this.http.post(`${baseurl}ingresos/guardar`,ingresos);
+    return this.http.post<any>(`${baseurl}ingresos/guardar`,ingresos);
   }
 
   modificarIngresos(Ingresos: Ingresos): Observable<Ingresos> {

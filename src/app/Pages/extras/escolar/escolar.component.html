@@ -3,8 +3,7 @@
     <h1>Modalidades Escolares</h1>
   </header>
   <main>
-    {{ escolares | json }}
-    <table *ngIf="escolares.length > 0">
+    <table>
       <thead>
         <tr>
           <th>ID</th>
@@ -15,8 +14,6 @@
         <tr *ngFor="let escolar of escolares">
           <td>{{ escolar.id_modalidad }}</td>
           <td>{{ escolar.tipo_modalidad }}</td>
-          <td>{{ escolares[1].id_modalidad }}</td>
-          <td>{{ escolares[1].tipo_modalidad.toString() }}</td>
         </tr>
       </tbody>
     </table>

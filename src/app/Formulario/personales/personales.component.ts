@@ -4,6 +4,8 @@ import { PersonapiService } from "../../Services/personapi.service";
 import { Personales } from 'src/app/Clases/personales';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {Genero} from "../../Clases/genero";
+import {GeneapiService} from "../../Services/geneapi.service";
 
 
 @Component({
@@ -15,13 +17,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 })
 export class PersonalesComponent implements OnInit {
   person: Personales = new Personales();
+  genero:Genero[]=[];
 
   constructor(private personapi: PersonapiService,
               private router: Router,
-              private activedroute: ActivatedRoute) { }
+              private activedroute: ActivatedRoute,
+              private generoio:GeneapiService) { }
 
   ngOnInit() {
     this.cargarpersonales();
+    this.generoio.getGenero().subscribe((Genero)=>{
+      console.log('Genero', Genero);
+      (this.genero= Genero)
+    });
   }
 
   cargarpersonales() {

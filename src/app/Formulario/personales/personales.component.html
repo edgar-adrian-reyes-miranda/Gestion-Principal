@@ -29,13 +29,20 @@
         />
 
         <h2><i class="material-icons"></i> Información de contacto</h2>
-        <input
-          type="text"
-          name="genero"
-          placeholder="Género"
+        <label for="Genero">Genero:</label>
+        <select
+          name="Genero"
           required
-          [(ngModel)]="person.genero"
-        />
+          [(ngModel)]="person.genero.genero"
+        >
+          <option value="" disabled selected>Elije tu genero</option>
+          <option
+            *ngFor="let genero of genero"
+            [ngValue]="genero"
+          >
+            {{genero.genero}}
+          </option>
+        </select>
         <input
           type="text"
           name="edad"

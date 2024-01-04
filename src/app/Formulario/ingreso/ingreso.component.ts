@@ -71,15 +71,16 @@ export class IngresoComponent implements OnInit {
   }
 
   guardar() {
+    console.log('Datos de ingreso a guardar:', this.ingreso);
     this.IngresoapiService.guardarIngresos(this.ingreso).subscribe(
       (ingresos) => {
         this.route.navigate(['/lista-ingresos']);
-        console.log('Nuevo ingreso',
-        `Nuevo ${this.ingreso.cv} guardado con éxito`);
+        console.log('Nuevo ingreso', `Nuevo ${this.ingreso.cv} guardado con éxito`);
       },
-      (error) => console.error('Error al actualizar', error)
+      (error) => console.error('Error al guardar', error)
     );
   }
+
 
 
 }

@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { Personales } from '../../../Clases/personales';
 import { Router, RouterLink } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {Genero} from "../../../Clases/genero";
 
 @Component({
   selector: 'app-datospersonales',
@@ -14,7 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 })
 export class DatospersonalesComponent implements OnInit {
   personal: Personales[] = [];
-
+  genero:Genero[]=[];
   constructor(
     private PersonapiService: PersonapiService,
     private router: Router

@@ -1,3 +1,5 @@
+import {Genero} from "./genero";
+
 export class Personales {
   id_person?:number;
   nombre:string="";
@@ -7,7 +9,7 @@ export class Personales {
   edad:string="";
   telefono:string="";
   telefono_casa:string="";
-  genero:string="";
+  genero: Genero= new Genero();
   curp:string="";
   direccion:string="";
   estados:string="";
