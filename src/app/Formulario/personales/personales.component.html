@@ -33,14 +33,14 @@
         <select
           name="Genero"
           required
-          [(ngModel)]="person.genero.genero"
+          [(ngModel)]="person.tipo_genero"
         >
           <option value="" disabled selected>Elije tu genero</option>
           <option
             *ngFor="let genero of genero"
             [ngValue]="genero"
           >
-            {{genero.genero}}
+            {{person.tipo_genero}}
           </option>
         </select>
         <input
@@ -105,9 +105,8 @@
         <button
           [routerLink]="'/lista-personales'"
           role="button"
-          (click)="guardar()"
+          (click)='guardar()'
           *ngIf="!person.id_person; else elseBlock"
-          type="submit"
         >
           Siguiente
         </button>

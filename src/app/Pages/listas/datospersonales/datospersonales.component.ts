@@ -2,23 +2,25 @@ import { PersonapiService } from './../../../Services/personapi.service';
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Personales } from '../../../Clases/personales';
-import { Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {Genero} from "../../../Clases/genero";
+import { Genero } from "../../../Clases/genero";
+import { GeneapiService } from '../../../Services/geneapi.service';
 
 @Component({
   selector: 'app-datospersonales',
   standalone: true,
-  imports: [CommonModule, RouterLink, ReactiveFormsModule, FormsModule],
+  imports: [CommonModule, RouterLink, ReactiveFormsModule, FormsModule,],
   templateUrl: './datospersonales.component.html',
   styleUrl: './datospersonales.component.css',
 })
 export class DatospersonalesComponent implements OnInit {
   personal: Personales[] = [];
-  genero:Genero[]=[];
+  genero: Genero[] = [];
   constructor(
     private PersonapiService: PersonapiService,
-    private router: Router
+    private router: Router,
+    private GeneapiService: GeneapiService,
   ) { }
 
   ngOnInit(): void {
@@ -30,7 +32,18 @@ export class DatospersonalesComponent implements OnInit {
       (error) => console.error('Error al obtener datos personales', error),
       () => console.log('Obtención de personales completada')
     );
+
+    this.GeneapiService.getGenero().subscribe(
+      (data: Genero[]) => {
+        console.log('datos de genero', data);
+        this.genero = data;
+      },
+      (error) => console.error('Error al obtener datos de género', error),
+      () => console.log('Obtención de género completada')
+    );
   }
+
+
 
   eliminarpersonal(id: number | undefined) {
     if (id) {

@@ -24,4 +24,16 @@ export class PlanesEducativosComponent implements OnInit{
     error => 'Error al mostrar la lista');
   }
 
+  softDeletePlam(id:number){
+
+    this.pleduapi.softDeletePlanEducativo(id).subscribe(
+      ()=>{
+        console.log('Eliminado suave con exito');
+      },
+      (error)=>{
+        console.error('Error al eliminar suavemente', error);
+      }
+    );
+  }
+
 }

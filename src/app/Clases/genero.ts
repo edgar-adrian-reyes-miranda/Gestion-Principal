@@ -1,4 +1,4 @@
 export class Genero {
-  id_genero?:number;
-  genero:string="";
+  id_genero:number=0;
+  tipo_genero:string='';
 }

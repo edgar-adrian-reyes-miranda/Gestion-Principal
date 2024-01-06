@@ -24,15 +24,15 @@ export class PersonalesComponent implements OnInit {
               private activedroute: ActivatedRoute,
               private generoio:GeneapiService) { }
 
-  ngOnInit() {
+  ngOnInit():void {
     this.cargarpersonales();
     this.generoio.getGenero().subscribe((Genero)=>{
       console.log('Genero', Genero);
-      (this.genero= Genero)
+      this.genero = Genero;
     });
   }
 
-  cargarpersonales() {
+  cargarpersonales():void {
     this.activedroute.params.subscribe((params) => {
       let id = params['id_person'];
       if (id) {
@@ -44,14 +44,17 @@ export class PersonalesComponent implements OnInit {
     });
   }
 
-  guardar() {
-    this.personapi.guardarPersonales(this.person).subscribe(
-      (personales) => {
+  guardar(): void {
+    // Verificar si se ha seleccionado un género
+    if (this.person.tipo_genero) {
+      // Resto del código para guardar los datos
+      this.personapi.guardarPersonales(this.person).subscribe(personales => {
         this.router.navigate(['/lista-personales']);
-        console.log('Nuevo dato personales', `Nuevo ${this.person.nombre} creado con éxito`);
-      },
-      (error) => console.error('Error al actualizar', error)
-    );
+        console.log(`Nuevo dato personales ${this.person.nombre} creado con éxito. Género seleccionado: ${this.person.tipo_genero}`);
+      });
+    } else {
+      console.error('Por favor, selecciona un género antes de guardar.');
+    }
   }
 
   editarPersonaes() {

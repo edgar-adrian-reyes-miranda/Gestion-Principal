@@ -1,1 +1,28 @@
-<p>borrados works!</p>
+<div class="contenedor">
+  <header>
+    <h1>Datos de Ingreso</h1>
+  </header>
+  <main>
+    <table>
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let soft of planes">
+        <td>{{soft.id_plan}}</td>
+        <td>{{soft.nombre}}</td>
+
+        <td>
+          <button class="Restaurar" title="Restaurar" (click)="restaurarPlan(soft.id_plan)"><i class="material-icons">resert</i></button>
+
+        </td>
+      </tr>
+      <!-- Aquí van las filas con los datos -->
+      </tbody>
+    </table>
+  </main>
+</div>

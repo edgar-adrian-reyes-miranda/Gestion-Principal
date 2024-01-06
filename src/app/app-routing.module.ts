@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterLink, RouterModule, Routes } from '@angular/router';
 import { InformacionComponent } from './Pages/informacion/informacion.component';
 import { PlanesEducativosComponent } from './Pages/extras/planes-educativos/planes-educativos.component';
 import { GruposComponent } from './Pages/extras/grupos/grupos.component';
@@ -119,7 +119,8 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes), HttpClientModule,
-    CommonModule, BrowserModule,FormsModule,ReactiveFormsModule,],
+    CommonModule, BrowserModule, FormsModule, ReactiveFormsModule,
+  RouterLink,],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

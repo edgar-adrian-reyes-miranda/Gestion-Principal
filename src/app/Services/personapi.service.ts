@@ -1,24 +1,24 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
 import baseurl from "./url";
-import {Personales} from "../Clases/personales";
+import { Personales } from "../Clases/personales";
 
 @Injectable({
   providedIn: 'root'
 })
 export class PersonapiService {
 
-  constructor(private http:HttpClient) { }
-  getperson(){
+  constructor(private http: HttpClient) { }
+  getperson() {
     return this.http.get<Personales[]>(`${baseurl}personales/lista`)
   }
-  getPersonales(id_person:number) {
+  getPersonales(id_person: number) {
     return this.http.get<Personales>(`${baseurl}personales/${id_person}`);
   }
 
   guardarPersonales(personales: Personales) {
-    return this.http.post(`${baseurl}personales/guardar`, personales);
+    return this.http.post<Personales>(`${baseurl}personales/guardar`, personales);
   }
 
   modificarPersonales(Personales: Personales): Observable<Personales> {

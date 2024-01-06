@@ -19,5 +19,11 @@ export class PleduapiService {
       map(Planesedu=> Planesedu as Planesedu[])
     );
   }
+  softDeletePlanEducativo(id_plan:number){
+    return this.http.delete(`${baseurl}/planes/delete/${id_plan}`);
+  }
+  restaurarSoft(id_plan:number){
+    return this.http.patch<void>(`${baseurl}planes/${id_plan}`,{deleted:false});
+  }
 
 }

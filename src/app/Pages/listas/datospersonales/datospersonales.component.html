@@ -6,46 +6,56 @@
     <button [routerLink]="'/Datos-escolares'">Siguiente</button>
     <table>
       <thead>
-      <tr>
-        <th>ID</th>
-        <th>Nombre</th>
-        <th>Primer Apellido</th>
-        <th>Segundo Apellido</th>
-        <th>Correo</th>
-        <th>CURP</th>
-        <th>EDAD</th>
-        <th>Estado</th>
-        <th>Municipio</th>
-        <th>Dirección</th>
-        <th>Género</th>
-        <th>Teléfono</th>
-        <th>Teléfono de Casa</th>
-        <th>Acciones</th>
-
-      </tr>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Primer Apellido</th>
+          <th>Segundo Apellido</th>
+          <th>Correo</th>
+          <th>CURP</th>
+          <th>EDAD</th>
+          <th>Estado</th>
+          <th>Municipio</th>
+          <th>Dirección</th>
+          <th>Género</th>
+          <th>Teléfono</th>
+          <th>Teléfono de Casa</th>
+          <th>Acciones</th>
+        </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let person of personal">
-      <td>{{person.id_person}}</td>
-      <td>{{person.nombre}}</td>
-      <td>{{person.p_apellido}}</td>
-      <td>{{person.s_apellido}}</td>
-      <td>{{person.correo}}</td>
-      <td>{{person.curp}}</td>
-      <td>{{person.edad}}</td>
-      <td>{{person.direccion}}</td>
-      <th>{{person.estados}}</th>
-      <th>{{person.municipio}}</th>
-      <td>{{person.genero.genero}}</td>
-      <td>{{person.telefono}}</td>
-      <td>{{person.telefono_casa}}</td>
+        <tr *ngFor="let person of personal">
+          <td>{{ person.id_person }}</td>
+          <td>{{ person.nombre }}</td>
+          <td>{{ person.p_apellido }}</td>
+          <td>{{ person.s_apellido }}</td>
+          <td>{{ person.correo }}</td>
+          <td>{{ person.curp }}</td>
+          <td>{{ person.edad }}</td>
+          <td>{{ person.direccion }}</td>
+          <td>{{ person.estados }}</td>
+          <td>{{ person.municipio }}</td>
+          <td>{{ person?.tipo_genero?.tipo_genero }}</td>
+          <td>{{ person.telefono }}</td>
+          <td>{{ person.telefono_casa }}</td>
 
-      <td>
-      <button class="eliminar" title="Eliminar" (click)="eliminarpersonal(person.id_person)"> <i class="material-icons">delete</i></button>
-        <button class="modificar" title="Modificar"  [routerLink]="['/Datos-personales/forms/',person.id_person]"><i class="material-icons">edit</i></button>
-      </td>
-
-      </tr>
+          <td>
+            <button
+              class="eliminar"
+              title="Eliminar"
+              (click)="eliminarpersonal(person.id_person)"
+            >
+              <i class="material-icons">delete</i>
+            </button>
+            <button
+              class="modificar"
+              title="Modificar"
+              [routerLink]="['/Datos-personales/forms/', person.id_person]"
+            >
+              <i class="material-icons">edit</i>
+            </button>
+          </td>
+        </tr>
       </tbody>
     </table>
   </main>

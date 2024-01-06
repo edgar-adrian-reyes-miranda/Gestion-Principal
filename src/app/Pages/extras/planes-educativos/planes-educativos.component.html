@@ -17,6 +17,9 @@
       <tr *ngFor="let plan of planes">
         <td>{{plan.id_plan}}</td>
         <td>{{plan.nombre}}</td>
+        <td>
+          <button (click)="softDeletePlam(plan.id_plan)" ><i class="material-icons">delete</i> </button>
+        </td>
       </tr>
       </tbody>
     </table>
