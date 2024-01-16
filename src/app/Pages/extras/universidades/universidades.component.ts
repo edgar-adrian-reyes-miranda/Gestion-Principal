@@ -54,7 +54,7 @@ export class UniversidadesComponent implements OnInit{
       () => console.log('Actualización de universidades completada')
     );
   }
-  
+
   // En tu componente TypeScript
 editarUniversidad(id_uni: number | undefined) {
   // Verificar si id_uni tiene un valor antes de navegar

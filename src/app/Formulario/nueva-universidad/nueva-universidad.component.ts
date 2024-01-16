@@ -14,8 +14,10 @@ import { UnivapiService } from 'src/app/Services/univapi.service';
 })
 export class NuevaUniversidadComponent implements OnInit {
   Universidad: Universidad = new Universidad();
-  
-  constructor(private uniapi: UnivapiService, private router: Router, private activaRoute:ActivatedRoute) {}
+
+  constructor(private uniapi: UnivapiService,
+    private router: Router,
+    private activaRoute:ActivatedRoute) {}
 
   ngOnInit(): void {
     this.cargarUniversidad();
@@ -31,7 +33,7 @@ cargarUniversidad():void{
 }
 
 guardar():void{
-  this.uniapi.guardarUni(this.Universidad).subscribe(universidad =>{ 
+  this.uniapi.guardarUni(this.Universidad).subscribe(universidad =>{
       this.router.navigate(['/Universidades'])
       console.log('Nueva Universidad', 'Nueva ${this.Universidad.nombre} creado con exito')
     });
